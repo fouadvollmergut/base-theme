@@ -1,0 +1,17 @@
+:root {
+  --flex-gap-sm: var(--inner-spacing-sm);
+  --flex-gap-md: var(--inner-spacing-md);
+  --flex-gap-lg: var(--inner-spacing-lg);
+}
+
+.gap--sm {
+  gap: var(--flex-gap-sm);
+}
+
+.gap--md {
+  gap: var(--flex-gap-md);
+}
+
+.gap--lg {
+  gap: var(--flex-gap-lg);
+}

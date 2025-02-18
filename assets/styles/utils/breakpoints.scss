@@ -1,0 +1,12 @@
+$devices: (
+  'tablet': 667px,
+  'desktop': 1230px
+);
+
+@mixin device-size($device) {
+  @if map-has-key($devices, $device) {
+    @media (min-width: #{map-get($devices, $device)}) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.statement {
+  .content--image {
+    margin-bottom: var(--inner-spacing-lg);
+    aspect-ratio: 1;
+    width: 50%;
+  }
+
+  q {
+    display: block;
+    margin-top: var(--inner-spacing-lg);
+    margin-bottom: var(--inner-spacing-lg);
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @include device-size('tablet') {
+    .content--image {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    q {
+      margin-top: 0;
+      margin-bottom: var(--inner-spacing-lg);
+    }
+  }
+}

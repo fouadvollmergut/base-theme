@@ -1,0 +1,149 @@
+:root {
+  // Colors
+  --base-color: #FFF6D8;
+  --base-color-light: #4B6045;
+  --base-color-dark: #273823;
+
+  --accent-color: #ADC094;
+
+  --button-color-dark: #171717;
+  --button-color-light: #FFF6D8;
+
+  --text-color-dark: #171717;
+  --text-color-light: #ffffff;
+
+  --footer-color: #171717;
+  --error-color: #da1e28;
+}
+
+.base-color-background {
+  background-color: var(--base-color);
+
+  .gdymc_moduleinner {
+    h1, h2, h3, h4, h5, h6, p, span,
+    .gdymc_text, 
+    .gdymc_text > * {
+      color: var(--text-color-dark);
+    }
+
+    .button {
+      background-color: var(--base-color-light);
+      color: var(--text-color-light);
+
+      &:hover {
+        background-color: var(--base-color-dark);
+      }
+
+      &.button-primary {
+        background-color: var(--button-color-dark);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-light);
+        }
+      }
+    }
+  }
+}
+
+.base-color-light-background {
+  background-color: var(--base-color-light);
+  
+  .gdymc_moduleinner {
+    h1, h2, h3, h4, h5, h6, p, span,
+    .gdymc_text, 
+    .gdymc_text > * {
+      color: var(--text-color-light);
+    }
+
+    .button {
+      background-color: var(--base-color);
+      color: var(--text-color-dark);
+
+      &:hover {
+        background-color: var(--text-color-light);
+      }
+
+      &.button-primary {
+        background-color: var(--button-color-dark);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
+      }
+    }
+  }
+}
+
+.base-color-dark-background {
+  background-color: var(--base-color-dark);
+
+  .gdymc_moduleinner {
+    h1, h2, h3, h4, h5, h6, p, span,
+    .gdymc_text, 
+    .gdymc_text > * {
+      color: var(--text-color-light);
+    }
+
+    .button {
+      background-color: var(--base-color);
+      color: var(--text-color-dark);
+
+      &:hover {
+        background-color: var(--text-color-light);
+      }
+
+      &.button-primary {
+        background-color: var(--button-color-dark);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-light);
+        }
+      }
+    }
+  }
+}
+
+.accent-color-background {
+  background-color: var(--accent-color);
+
+  .gdymc_moduleinner {
+    h1, h2, h3, h4, h5, h6, p, span,
+    .gdymc_text, 
+    .gdymc_text > * {
+      color: var(--text-color-dark);
+    }
+
+    .button {
+      background-color: var(--text-color-light);
+      color: var(--text-color-dark);
+
+      &:hover {
+        background-color: var(--base-color);
+      }
+
+      &.button-primary {
+        background-color: var(--button-color-dark);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-light);
+        }
+      }
+    }
+  }
+}
+
+.dark-color-background {
+  background-color: var(--text-color-dark);
+
+  .gdymc_moduleinner {
+    h1, h2, h3, h4, h5, h6, p, span,
+    .gdymc_text, 
+    .gdymc_text > * {
+      color: var(--base-color);
+    }
+  }
+}

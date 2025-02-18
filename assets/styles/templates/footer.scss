@@ -1,0 +1,101 @@
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--footer-color);
+  color: var(--text-color-light);
+  gap: var(--inner-spacing-lg);
+
+  .footer {
+    position: relative;
+    margin: var(--outer-spacing-md) 0;
+
+    .lamb {
+      position: relative;
+      width: auto;
+      height: 75px;
+      display: block;
+      background-image: url('../images/sulminger-lamm-haus.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+
+    ul.menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      margin-top: var(--inner-spacing-lg);
+      padding: 0;
+
+      li a {
+        color: var(--text-color-light);
+        text-decoration: none;
+        font-size: var(--p-font-size);
+        font-weight: var(--p-font-weight);
+        line-height: 1.5;
+        transition: color 0.15s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      
+      }
+    }
+  }
+
+  .superfooter {
+    position: relative;
+    margin: var(--outer-spacing-md) 0;
+
+    ul.menu {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      list-style: none;
+      gap: 10px;
+      margin: 0;
+      margin-top: var(--inner-spacing-lg);
+      padding: 0;
+
+      li a {
+        color: var(--text-color-light);
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: var(--p-font-weight);
+        line-height: 1;
+        transition: color 0.15s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      
+      }
+    }
+  }
+
+  @include device-size('tablet') {
+    .footer {
+      ul.menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+    }
+
+    .superfooter {
+      ul.menu {
+        justify-content: flex-end;
+        margin: 0;
+      }
+    }
+  }
+}
+

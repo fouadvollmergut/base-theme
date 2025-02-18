@@ -1,0 +1,44 @@
+name: Deploy Staging
+
+on: workflow_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Node.js version
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+    
+    - name: Build for Production
+      run:  npm run build:prod
+
+    - name: Load secret
+      uses: 1password/load-secrets-action@v1
+      with:
+        export-env: true
+      env:
+        OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+        SECRET: "op://CICD/Raidboxes/private key"
+        HOST: op://CICD/base/staging host
+        USER: op://CICD/base/staging user
+        PORT: op://CICD/base/port
+        TARGET: "op://CICD/base/staging deployment target"
+
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@main
+      env:
+          SSH_PRIVATE_KEY: ${{ env.SECRET }}
+          REMOTE_HOST: ${{ env.HOST }}
+          REMOTE_USER: ${{ env.USER }}
+          REMOTE_PORT: ${{ env.PORT }}
+          TARGET: ${{ env.TARGET }}
+          ARGS: "--delete"
+          SOURCE: "dist/"

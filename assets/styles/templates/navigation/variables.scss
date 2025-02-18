@@ -1,0 +1,17 @@
+:root {
+  --navigation-font-size: 18px;
+  --navigation-font-weight: 400;
+  --navigation-letter-spacing: .05em;
+
+  @include device-size('tablet') {
+    --navigation-font-size: 18px;
+    --navigation-font-weight: 400;
+    --navigation-letter-spacing: .05em;
+  }
+
+  @include device-size('desktop') {
+    --navigation-font-size: 18px;
+    --navigation-font-weight: 300;
+    --navigation-letter-spacing: .05em;
+  }
+}
