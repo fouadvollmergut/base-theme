@@ -1,6 +1,6 @@
 $devices: (
-  'tablet': 667px,
-  'desktop': 1230px
+  'tablet': 1080px,
+  'desktop': 1360px
 );
 
 @mixin device-size($device) {

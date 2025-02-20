@@ -13,6 +13,8 @@
     register_nav_menu( 'main', 'Main' );
     register_nav_menu( 'legal', 'Legal' );
     register_nav_menu( 'social', 'Social' );
+    register_nav_menu( 'footer-left', 'Footer Left' );
+    register_nav_menu( 'footer-right', 'Footer Right' );
   }
 
   // THEME Support SVG
@@ -44,9 +46,18 @@
   // THEME Dupliacte Posts
 
   include_once( get_template_directory() . '/includes/duplicate-posts.php' );
+  include_once( get_template_directory() . '/includes/company-settings.php' );
 
 
   // GDYMC
+
+  // GDYMC Module Folder
+
+  add_filter('gdymc_modules_folder', 'custom_gdymc_folder');
+
+  function custom_gdymc_folder () {
+    return get_template_directory() . '/modules';
+  }
 
   // GDYMC Global Module Settings
 

@@ -5,6 +5,8 @@
   --base-color-dark: #273823;
 
   --accent-color: #ADC094;
+  --accent-color-light: #D6E3C4;
+  --accent-color-dark: #7F9A6F;
 
   --button-color-dark: #171717;
   --button-color-light: #FFF6D8;
@@ -12,7 +14,23 @@
   --text-color-dark: #171717;
   --text-color-light: #ffffff;
 
-  --footer-color: #171717;
+  --mainmenu-background-color: #FFF6D8;
+
+  --submenu-background-color: #D6E3C4;
+  --submenu-background-color-accent: #4B6045;
+
+  --mainmenu-text-color: #000000;
+  --mainmenu-text-color-accent: #ffffff;
+  
+  --submenu-text-color: #000000;
+  --submenu-text-color-accent: #ffffff;
+
+  --footer-background-color: #273823;
+  --footer-background-color-accent: #4B6045;
+
+  --footer-text-color: #ffffff;
+  --footer-text-color-accent: #ffffff;
+  
   --error-color: #da1e28;
 }
 

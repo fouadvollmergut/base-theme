@@ -1,8 +1,8 @@
 const MobileMenu = class {
   constructor() {
     this.body = document.body;
-    this.menu = document.querySelector('header.mobile');
-    this.menuButton = document.querySelector('header.mobile .mobile-menu-trigger');
+    this.menu = document.querySelector('.mobile-menu');
+    this.menuButton = document.querySelector('.mobile-menu-trigger');
   }
 
   init() {

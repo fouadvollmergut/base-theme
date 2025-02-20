@@ -1,0 +1,1 @@
+<!-- Generate Favicon an Browser Info here: https://realfavicongenerator.net/ -->

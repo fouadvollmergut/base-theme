@@ -1,6 +1,7 @@
 // Utilities
 @import './utils/breakpoints.scss';
 @import './utils/flex.scss';
+@import './utils/font-awesome.scss';
 
 // Custom
 @import './custom/fontfaces.scss';
@@ -10,11 +11,11 @@
 @import './custom/gap.scss';
 
 // Fonts
-@import './fonts/fonts.scss';
+@import './fonts/index.scss';
 @import '../fontawesome/scss/fontawesome.scss';
 @import '../fontawesome/scss/brands.scss';
-@import '../fontawesome/scss/sharp-regular.scss';
-@import '../fontawesome/scss/sharp-solid.scss';
+@import '../fontawesome/scss/regular.scss';
+@import '../fontawesome/scss/solid.scss';
 
 // Template Variables
 @import './templates/button/variables.scss';

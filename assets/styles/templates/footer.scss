@@ -3,23 +3,23 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--footer-color);
-  color: var(--text-color-light);
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
   gap: var(--inner-spacing-lg);
 
   .footer {
     position: relative;
-    margin: var(--outer-spacing-md) 0;
+    margin-top: var(--outer-spacing-md);
 
-    .lamb {
-      position: relative;
-      width: auto;
-      height: 75px;
-      display: block;
-      background-image: url('../images/sulminger-lamm-haus.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-bottom: var(--inner-spacing-md);
+
+      img {
+        height: 80px;
+      }
     }
 
     ul.menu {
@@ -27,13 +27,13 @@ footer {
       flex-direction: column;
       justify-content: flex-end;
       list-style: none;
-      gap: 30px;
+      gap: var(--inner-spacing-sm);
       margin: 0;
       margin-top: var(--inner-spacing-lg);
       padding: 0;
 
       li a {
-        color: var(--text-color-light);
+        color: var(--footer-text-color);
         text-decoration: none;
         font-size: var(--p-font-size);
         font-weight: var(--p-font-weight);
@@ -51,21 +51,23 @@ footer {
 
   .superfooter {
     position: relative;
-    margin: var(--outer-spacing-md) 0;
+    margin-bottom: var(--outer-spacing-md);
+    gap: var(--inner-spacing-lg) 0;
 
     ul.menu {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-start;
+      align-items: center;
       list-style: none;
-      gap: 10px;
+      gap: var(--inner-spacing-sm);
       margin: 0;
       margin-top: var(--inner-spacing-lg);
       padding: 0;
 
       li a {
-        color: var(--text-color-light);
+        color: var(--footer-text-color);
         text-decoration: none;
         font-size: 30px;
         font-weight: var(--p-font-weight);
@@ -83,16 +85,22 @@ footer {
 
   @include device-size('tablet') {
     .footer {
+      &.grid {
+        margin: var(--outer-spacing-md) 0;
+      }
+
       ul.menu {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         margin: 0;
       }
     }
 
     .superfooter {
+      &.grid {
+        margin: var(--outer-spacing-md) 0;
+      }
+
       ul.menu {
-        justify-content: flex-end;
         margin: 0;
       }
     }
