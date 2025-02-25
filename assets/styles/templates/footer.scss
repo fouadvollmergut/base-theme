@@ -22,6 +22,10 @@ footer {
       }
     }
 
+    .copyright {
+      padding-top: var(--inner-spacing-md);
+    }
+
     ul.menu {
       display: flex;
       flex-direction: column;
@@ -81,6 +85,42 @@ footer {
       
       }
     }
+
+    .fvg_backlink {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: var(--outer-spacing-md);
+
+      a {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+
+        p {
+          font-size: .6rem;
+          line-height: .6rem;
+          font-weight: var(--p-font-weight);
+          color: var(--footer-text-color);
+          text-align: right;
+        }
+
+        svg {
+          display: block;
+          height: 35px;
+          fill: var(--footer-text-color);
+  
+          transition: fill 0.12s ease-in-out;
+        }
+
+        &:hover {
+          svg {
+            fill: var(--accent-color);
+          }
+        }
+      }
+    }
   }
 
   @include device-size('tablet') {
@@ -102,6 +142,11 @@ footer {
 
       ul.menu {
         margin: 0;
+      }
+
+      .fvg_backlink {
+        margin-top: 0;
+        justify-content: flex-end;
       }
     }
   }
