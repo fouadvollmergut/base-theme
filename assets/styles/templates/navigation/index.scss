@@ -1,6 +1,6 @@
 :root {
   --navigation-height: 60px;
-  --main-menu-width: 150px;
+  --main-menu-width: 160px;
   --main-menu-highlight-width: 220px;
 }
 
@@ -9,6 +9,16 @@ main {
 }
 
 header {
+  &:hover .main-nav {
+    > ul > li {
+      width: var(--main-menu-width) !important;
+    }
+
+    > ul > li.highlight {
+      width: var(--main-menu-highlight-width) !important;
+    }
+  }
+
   &:hover .subheader {
     opacity: 1;
     pointer-events: all;
@@ -38,9 +48,12 @@ header {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      padding: calc(var(--inner-spacing-sm) / 2) 0;
 
       img {
-        height: var(--navigation-height);
+        object-fit: contain;
+        height: calc(var(--navigation-height) - var(--inner-spacing-sm));
+        width: 100%;
       }
     }
 
@@ -59,7 +72,9 @@ header {
           font-family: var(--navigation-font-family);
           font-size: var(--navigation-font-size);
           font-weight: var(--navigation-font-weight);
-          width: var(--main-menu-width);
+          width: calc-size(auto, size);
+
+          transition: all 0.12s ease-in-out;
 
           > a {
             display: inline-flex;
@@ -140,10 +155,10 @@ header {
 
         > li {
           width: var(--main-menu-width);
-          border-left: 2px solid var(--accent-color);
+          border-left: 2px solid var(--submenu-background-color-accent);
     
           &:hover {
-            border-left-color: var(--accent-color-dark);
+            border-left-color: var(--accent-color);
           }
     
           > a {
@@ -156,7 +171,7 @@ header {
             hyphens: auto;
 
             // Transition Properties
-            opacity: 0.7;
+            opacity: 0.8;
 
             transition: opacity 0.12s ease-in-out;
           }
@@ -231,15 +246,18 @@ header.mobile {
   z-index: 1000;
   padding: 0 var(--inner-spacing-sm);
 
-  background-color: var(--base-color);
+  background-color: var(--mainmenu-background-color);
 
   .logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: calc(var(--inner-spacing-sm) - 2px) 0;
 
     img {
-      height: 60px;
+      object-fit: contain;
+      height: calc(60px - (var(--inner-spacing-sm) * 2) + 4px);
+      width: 100%;
     }
   }
 
@@ -271,7 +289,7 @@ header.mobile {
     overflow-y: auto;
     width: 80%;
     left: 20%;
-    background-color: var(--accent-color-light);
+    background-color: var(--submenu-background-color);
     transition: transform 0.12s ease-in-out;
 
     &--open {
@@ -297,7 +315,7 @@ header.mobile {
           display: block;
           padding: var(--inner-spacing-md);
           padding-bottom: calc(var(--inner-spacing-sm) / 3);
-          color: var(--mainmenu-text-color);
+          color: var(--submenu-text-color);
           text-decoration: none;
         }
       }
@@ -312,7 +330,7 @@ header.mobile {
         margin-top: var(--inner-spacing-md);
 
         > a {
-          color: var(--text-color-light);
+          color: var(--submenu-text-color);
         }
       }
 
@@ -329,7 +347,7 @@ header.mobile {
       list-style: none;
 
       > li {
-        border-left: 2px solid var(--accent-color-dark);
+        border-left: 2px solid var(--submenu-background-color-accent);
 
         > a {
           display: inline-block;
