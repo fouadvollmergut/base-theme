@@ -7,6 +7,10 @@
       gap: var(--inner-spacing-md);
       padding: var(--text-padding-y) var(--text-padding-x);
       height: 100%;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
