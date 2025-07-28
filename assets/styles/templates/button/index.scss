@@ -13,10 +13,10 @@ input[type="submit"].button,
   text-transform: uppercase;
   cursor: pointer;
   transition: box-shadow 0.22s ease-in-out,
-              background-color 0.22s ease-in-out;;
+              background-color 0.22s ease-in-out;
 
   // Color variations
-  background-color: var(--base-color-light);
+  background-color: var(--base-color);
   color: var(--text-color-light);
 
   &:hover {
@@ -25,11 +25,11 @@ input[type="submit"].button,
   }
 
   &.button-primary {
-    background-color: var(--button-color-dark);
+    background-color: var(--accent-color);
     color: var(--text-color-light);
 
     &:hover {
-      background-color: var(--base-color-light);
+      background-color: var(--accent-color-dark);
     }
   }
 }
@@ -39,80 +39,4 @@ input[type="submit"].button,
   flex-direction: column;
   gap: var(--inner-spacing-sm);
   padding: 0;
-}
-
-.cta.button-primary a {
-  background-color: var(--button-color-dark);
-  color: var(--text-color-light);
-
-  &:hover {
-    background-color: var(--base-color-dark);
-  }
-}
-
-// Event occupied button
-
-.event-occupied {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(-9deg);
-  margin-left: -120px;
-  margin-bottom: -60px;
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  background-color: var(--button-color-dark);
-  color: var(--text-color-light);
-  z-index: 10;
-
-  &.list {
-    position: relative;
-    margin: 0;
-    transform: rotate(-9deg);
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-
-    .fish-plate {
-      height: 45px;
-    }
-
-    p {
-      color: var(--text-color-light);
-      display: none;
-    }
-  }
-
-  @include device-size('tablet') {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(-9deg);
-    bottom: 30px;
-    margin: 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-
-    .fish-plate {
-      height: 80px;
-    }
-
-    &.list {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      border-radius: 60px;
-      top: 0;
-      left: 100%;
-      transform: translateX(-100%) rotate(-9deg);
-
-      p {
-        color: var(--text-color-light);
-        display: block;
-      }
-    }
-  }
 }

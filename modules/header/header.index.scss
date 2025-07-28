@@ -1,0 +1,103 @@
+.module.header {
+  position: relative;
+  height: 70vh;
+  padding: var(--module-spacing) 0;
+
+  .content--image {
+    position: absolute;
+    height: 75%;
+    width: 100%;
+
+    .gdymc_image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: all;
+    }
+  }
+
+  .subgrid {
+    align-items: end;
+  }
+
+  .content--text {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    justify-content: flex-end;
+    padding: var(--inner-spacing-md);
+    gap: var(--inner-spacing-md);
+    z-index: 1;
+    pointer-events: none;
+    background-color: #f3f3f3;
+
+    > * {
+      pointer-events: all;
+    }
+
+    .textbox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: var(--inner-spacing-md);
+    }
+  }
+
+  @include device-size('tablet') {
+    .content--text {
+      padding: var(--inner-spacing-lg);
+      gap: var(--inner-spacing-lg);
+
+      .textbox {
+        gap: var(--inner-spacing-md);
+      }
+
+      .gdymc_button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.background {
+  &-neutral {
+    .module.header {
+      .content--text {
+        background-color: #ffffff;
+        color: var(--text-color-dark);
+      }
+    }
+  }
+
+  &-light {
+    .module.header {
+      .content--text {
+        background-color: var(--base-color-light);
+        color: var(--text-color-dark);
+      }
+    }
+  }
+
+  &-dark {
+    .module.header {
+      .content--text {
+        background-color: var(--base-color-dark);
+        color: var(--text-color-light);
+      } 
+    }
+  }
+
+  &-accent {
+    .module.header {
+      .content--text {
+        background-color: var(--accent-color-dark);
+        color: var(--text-color-light);
+      }
+    }
+  }
+}

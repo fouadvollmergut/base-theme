@@ -1,7 +1,7 @@
 <?php
-  add_action('admin_init', 'my_general_section');  
+  add_action('admin_init', 'custom_company_section');  
 
-  function my_general_section() {  
+  function custom_company_section() {  
       add_settings_section(  
           'custom_company_information_section',
           'Company Informations',
@@ -18,7 +18,7 @@
           array( 'custom_company_information')  
       );
       
-      register_setting('general','custom_company_information', 'esc_attr');
+      register_setting('general', 'custom_company_information');
   }
 
   function custom_company_information_section_callback() {
@@ -26,6 +26,9 @@
   }
 
   function custom_company_information_callback($args) {  // Textbox Callback
-    $option = get_option($args[0]);
-    echo '<textarea id="'. $args[0] .'" name="'. $args[0] .'" rows="5" style="width: 100%;">' . $option . '</textarea>';
+    
+    $settings = array( 'media_buttons' => false, 'quicktags' => false );
+    $content = get_option($args[0]);
+    $editor_id = 'custom_company_information';
+    wp_editor($content, $editor_id, $settings);
 }

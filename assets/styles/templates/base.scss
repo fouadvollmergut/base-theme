@@ -26,6 +26,10 @@ body {
     main, footer {
       margin-left: -80%;
 
+      @include device-size('tablet') {
+        margin-left: -30%;
+      }
+
       &::after {
         content: '';
         position: fixed;
@@ -60,6 +64,10 @@ img {
   @include device-size('tablet') {
     display: block;
   }
+
+  @media (pointer: coarse) {
+    display: none;
+  }
 }
 
 .hiddesk {
@@ -76,4 +84,29 @@ img {
 
 .pb {
   padding-bottom: var(--outer-spacing-md);
+}
+
+// GDYMC image captions
+
+.gdymc_image.img {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  top: 0;
+
+  figcaption.gdymc-image-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    font-size: .9rem;
+    line-height: .9rem;
+    font-weight: var(--p-font-weight);
+    color: var(--text-color-dark);
+    margin: var(--inner-spacing-sm);
+    padding: var(--inner-spacing-sm);
+    text-align: center;
+    margin-top: var(--inner-spacing-sm);
+    background-color: #f3f3f3;
+  }
 }

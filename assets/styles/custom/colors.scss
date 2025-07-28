@@ -1,167 +1,193 @@
 :root {
   // Colors
-  --base-color: #FFF6D8;
-  --base-color-light: #4B6045;
-  --base-color-dark: #273823;
+  --base-color: #496DDB;
+  --base-color-rgb: 73, 109, 219;
+  --base-color-light: #DCE3FA;
+  --base-color-light-rgb: 220, 227, 250;
+  --base-color-dark: #2C4AAC;
+  --base-color-dark-rgb: 44, 74, 172;
 
-  --accent-color: #ADC094;
-  --accent-color-light: #D6E3C4;
-  --accent-color-dark: #7F9A6F;
+  --base-color-background-light: #CAD5F3;
+  --base-color-background-light-rgb: 202, 213, 243;
+  --base-color-background-dark: #2A3D91;
+  --base-color-background-dark-rgb: 42, 61, 145;
 
-  --button-color-dark: #171717;
-  --button-color-light: #FFF6D8;
+  --accent-color: #C95D63;
+  --accent-color-rgb: 201, 93, 99;
+  --accent-color-light: #F4D7D9;
+  --accent-color-light-rgb: 244, 215, 217;
+  --accent-color-dark: #9B3D43;
+  --accent-color-dark-rgb: 155, 61, 67;
+  --accent-color-darker: #803338;
+  --accent-color-darker-rgb: 128, 51, 56;
 
   --text-color-dark: #171717;
+  --text-color-dark-rgb: 23, 23, 23;
   --text-color-light: #ffffff;
+  --text-color-light-rgb: 255, 255, 255;
+  --text-color-accent: #F4D7D9;
+  --text-color-accent-rgb: 244, 215, 217;
 
-  --mainmenu-background-color: #FFF6D8;
+  --mainmenu-background-color: #496DDB;
+  --mainmenu-background-color-rgb: 73, 109, 219;
+  --mainmenu-background-color-hover: #2C4AAC;
+  --mainmenu-background-color-hover-rgb: 44, 74, 172;
 
-  --submenu-background-color: #D6E3C4;
-  --submenu-background-color-accent: #4B6045;
+  --submenu-background-color: #2C4AAC;
+  --submenu-background-color-rgb: 73, 109, 219;
+  --submenu-background-color-hover: #2A3D91;
+  --submenu-background-color-hover-rgb: 42, 61, 145;
 
-  --mainmenu-text-color: #000000;
+  --mainmenu-text-color: #f3f3f3;
+  --mainmenu-text-color-rgb: 243, 243, 243;
   --mainmenu-text-color-accent: #ffffff;
+  --mainmenu-text-color-accent-rgb: 255, 255, 255;
   
-  --submenu-text-color: #000000;
+  --submenu-text-color: #f3f3f3;
+  --submenu-text-color-rgb: 243, 243, 243;
   --submenu-text-color-accent: #ffffff;
+  --submenu-text-color-accent-rgb: 255, 255, 255;
 
-  --footer-background-color: #273823;
-  --footer-background-color-accent: #4B6045;
+  --footer-background-color: #2C4AAC;
+  --footer-background-color-rgb: 44, 74, 172;
+  --footer-background-color-accent: #C95D63;
+  --footer-background-color-accent-rgb: 201, 93, 99;
 
-  --footer-text-color: #ffffff;
+  --footer-text-color: #f3f3f3;
+  --footer-text-color-rgb: 243, 243, 243;
   --footer-text-color-accent: #ffffff;
+  --footer-text-color-accent-rgb: 255, 255, 255;
   
   --error-color: #da1e28;
+  --error-color-rgb: 218, 30, 40;
 }
 
-.base-color-background {
-  background-color: var(--base-color);
+.background {
+  &-neutral {
+    background-color: #f3f3f3;
 
-  .gdymc_moduleinner {
-    h1, h2, h3, h4, h5, h6, p, span,
-    .gdymc_text, 
-    .gdymc_text > * {
-      color: var(--text-color-dark);
-    }
-
-    .button {
-      background-color: var(--base-color-light);
-      color: var(--text-color-light);
-
-      &:hover {
-        background-color: var(--base-color-dark);
+    .gdymc_moduleinner {
+      h1, h2, h3, h4, h5, h6, p, span, q, a,
+      .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
+      .gdymc_text, 
+      .gdymc_text > *,
+      div {
+        color: var(--text-color-dark);
       }
 
-      &.button-primary {
-        background-color: var(--button-color-dark);
-        color: var(--text-color-light);
-
-        &:hover {
-          background-color: var(--base-color-light);
-        }
-      }
-    }
-  }
-}
-
-.base-color-light-background {
-  background-color: var(--base-color-light);
-  
-  .gdymc_moduleinner {
-    h1, h2, h3, h4, h5, h6, p, span,
-    .gdymc_text, 
-    .gdymc_text > * {
-      color: var(--text-color-light);
-    }
-
-    .button {
-      background-color: var(--base-color);
-      color: var(--text-color-dark);
-
-      &:hover {
-        background-color: var(--text-color-light);
-      }
-
-      &.button-primary {
-        background-color: var(--button-color-dark);
+      .button {
+        background-color: var(--base-color);
         color: var(--text-color-light);
 
         &:hover {
           background-color: var(--base-color-dark);
         }
-      }
-    }
-  }
-}
 
-.base-color-dark-background {
-  background-color: var(--base-color-dark);
+        &.button-primary {
+          background-color: var(--accent-color);
+          color: var(--text-color-light);
 
-  .gdymc_moduleinner {
-    h1, h2, h3, h4, h5, h6, p, span,
-    .gdymc_text, 
-    .gdymc_text > * {
-      color: var(--text-color-light);
-    }
-
-    .button {
-      background-color: var(--base-color);
-      color: var(--text-color-dark);
-
-      &:hover {
-        background-color: var(--text-color-light);
-      }
-
-      &.button-primary {
-        background-color: var(--button-color-dark);
-        color: var(--text-color-light);
-
-        &:hover {
-          background-color: var(--base-color-light);
+          &:hover {
+            background-color: var(--accent-color-dark);
+          }
         }
       }
     }
   }
-}
 
-.accent-color-background {
-  background-color: var(--accent-color);
+  &-light {
+    background-color: var(--base-color-background-light);
 
-  .gdymc_moduleinner {
-    h1, h2, h3, h4, h5, h6, p, span,
-    .gdymc_text, 
-    .gdymc_text > * {
-      color: var(--text-color-dark);
-    }
+    .gdymc_moduleinner {
+      h1, h2, h3, h4, h5, h6, p, span, q, a,
+      .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
+      .gdymc_text, 
+      .gdymc_text > *,
+      div {
+        color: var(--text-color-dark);
+      }
 
-    .button {
-      background-color: var(--text-color-light);
-      color: var(--text-color-dark);
-
-      &:hover {
+      .button {
         background-color: var(--base-color);
-      }
-
-      &.button-primary {
-        background-color: var(--button-color-dark);
         color: var(--text-color-light);
 
         &:hover {
-          background-color: var(--base-color-light);
+          background-color: var(--base-color-dark);
+        }
+
+        &.button-primary {
+          background-color: var(--accent-color);
+          color: var(--text-color-light);
+
+          &:hover {
+            background-color: var(--accent-color-dark);
+          }
         }
       }
     }
   }
-}
 
-.dark-color-background {
-  background-color: var(--text-color-dark);
+  &-dark {
+    background-color: var(--base-color-background-dark);
 
-  .gdymc_moduleinner {
-    h1, h2, h3, h4, h5, h6, p, span,
-    .gdymc_text, 
-    .gdymc_text > * {
-      color: var(--base-color);
+    .gdymc_moduleinner {
+      h1, h2, h3, h4, h5, h6, p, span, q, a,
+      .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
+      .gdymc_text,
+      .gdymc_text > *,
+      div {
+        color: var(--text-color-light);
+      }
+
+      .button {
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
+
+        &.button-primary {
+          background-color: var(--accent-color);
+          color: var(--text-color-light);
+
+          &:hover {
+            background-color: var(--accent-color-dark);
+          }
+        }
+      }
+    }
+  }
+
+  &-accent {
+    background-color: var(--accent-color);
+
+    .gdymc_moduleinner {
+      h1, h2, h3, h4, h5, h6, p, span, q, a,
+      .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
+      .gdymc_text, 
+      .gdymc_text > *,
+      div {
+        color: var(--text-color-light);
+      }
+
+      .button {
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
+
+        &.button-primary {
+          background-color: var(--accent-color-dark);
+          color: var(--text-color-light);
+
+          &:hover {
+            background-color: var(--accent-color-darker);
+          }
+        }
+      }
     }
   }
 }

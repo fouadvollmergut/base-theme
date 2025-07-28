@@ -51,6 +51,23 @@ footer {
       
       }
     }
+
+    .company-information {
+      p {
+        font-size: var(--p-font-size);
+        color: var(--footer-text-color);
+        margin-top: var(--inner-spacing-sm);
+      }
+
+      a {
+        color: var(--footer-text-color-accent);
+        transition: color 0.15s ease-in-out;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
   }
 
   .superfooter {
@@ -97,6 +114,7 @@ footer {
         display: inline-flex;
         flex-direction: row;
         align-items: center;
+        text-decoration: none;
 
         p {
           font-size: .6rem;

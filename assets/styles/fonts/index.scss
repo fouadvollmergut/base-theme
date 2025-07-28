@@ -12,7 +12,7 @@
 }
 
 
-h1, h2, h3, h4, h5, h6, p {
+.h1, .h2, .h3, .h4, .h5, .h6, .p {
   margin: 0;
   padding: 0;
   word-break: break-word;
@@ -32,18 +32,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
-h1, h1 .gdymc_text {
+.h1, .h1 .gdymc_text {
   font-family: var(--headline-font-family);
   font-weight: var(--h1-font-weight);
   font-size: var(--h1-font-size);
   line-height: var(--h1-line-height);
   letter-spacing: var(--h1-letter-spacing);
-  text-transform: uppercase;
   word-wrap: break-word;
   hyphens: auto;
 }
 
-h2, h2 .gdymc_text {
+.h2, .h2 .gdymc_text {
   font-family: var(--headline-font-family);
   font-size: var(--h2-font-size);
   line-height: var(--h2-line-height);
@@ -55,7 +54,7 @@ h2, h2 .gdymc_text {
   hyphens: auto;
 }
 
-h3, h3 .gdymc_text {
+.h3, .h3 .gdymc_text {
   font-family: var(--headline-font-family);
   font-weight: var(--h3-font-weight);
   font-size: var(--h3-font-size);
@@ -66,7 +65,7 @@ h3, h3 .gdymc_text {
   hyphens: auto;
 } 
 
-h4, h4 .gdymc_text {
+.h4, .h4 .gdymc_text {
   font-family: var(--headline-font-family);
   font-weight: var(--h4-font-weight);
   font-size: var(--h4-font-size);
@@ -78,18 +77,19 @@ h4, h4 .gdymc_text {
   hyphens: auto;
 }
 
-h5, h5 .gdymc_text,
+.h5, .h5 .gdymc_text,
 .subline, .subline .gdymc_text{
-  font-family: var(--headline-font-family);
+  font-family: var(--base-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   line-height: var(--h5-line-height);
   letter-spacing: var(--h5-letter-spacing);
+  text-transform: uppercase;
   word-wrap: break-word;
   hyphens: auto;
 }
 
-h6, h6 .gdymc_text {
+.h6, .h6 .gdymc_text {
   font-family: var(--headline-font-family);
   font-weight: var(--h6-font-weight);
   font-size: var(--h6-font-size);
@@ -99,7 +99,7 @@ h6, h6 .gdymc_text {
   hyphens: auto;
 }
 
-q, q .gdymc_text {
+.q, .q .gdymc_text {
   font-family: var(--headline-font-family);
   font-weight: var(--h3-font-weight);
   font-size: var(--h3-font-size);
@@ -110,7 +110,7 @@ q, q .gdymc_text {
   hyphens: auto;
 }
 
-p, p .gdymc_text {
+.p, .p .gdymc_text {
   font-family: var(--base-font-family);
   font-weight: var(--p-font-weight);
   font-size: var(--p-font-size);
@@ -137,7 +137,8 @@ i {
   text-decoration: none;
 }
 
-button, button .gdymc_text {
+button, button .gdymc_text,
+.button, .button .gdymc_text {
   font-family: var(--button-font-family);
   font-weight: 700;
   font-size: var(--button-font-size);

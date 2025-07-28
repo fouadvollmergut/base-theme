@@ -1,10 +1,35 @@
 :root {
-  // Spacing
-  --inner-spacing-sm: 1rem;
-  --inner-spacing-md: 1.5rem;
-  --inner-spacing-lg: 2rem;
+  --inner-spacing-sm: 0.5rem;
+  --inner-spacing-md: 1rem;
+  --inner-spacing-lg: 1.5rem;
+  --inner-spacing-xl: 2rem;
 
-  --outer-spacing-sm: 2.5rem;
-  --outer-spacing-md: 5rem;
-  --outer-spacing-lg: 7.5rem;
+  --outer-spacing-sm: 1.25rem;
+  --outer-spacing-md: 2.5rem;
+  --outer-spacing-lg: 3.75rem;
+  --outer-spacing-xl: 5rem;
+
+  --module-spacing: 1.5rem;
+
+  --text-padding-x: 0.5rem;
+  --text-padding-y: 0.5rem;
+}
+
+@include device-size($device: 'tablet') {
+  :root {
+    --inner-spacing-sm: 1rem;
+    --inner-spacing-md: 1.5rem;
+    --inner-spacing-lg: 2rem;
+    --inner-spacing-xl: 3rem;
+
+    --outer-spacing-sm: 2.5rem;
+    --outer-spacing-md: 5rem;
+    --outer-spacing-lg: 7.5rem;
+    --outer-spacing-xl: 10rem;
+
+    --module-spacing: 3rem;
+
+    --text-padding-x: 1rem;
+    --text-padding-y: 1rem;
+  }
 }

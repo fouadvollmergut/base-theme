@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const GlobImporter = require('node-sass-glob-importer');
-const { error } = require('console');
 
 
 const config = {
@@ -52,7 +51,7 @@ module.exports = (env, argv) => {
           { from: "*.php", to: path.resolve(__dirname, "./dist") },
           { from: "*.css", to: path.resolve(__dirname, "./dist") },
           { from: "screenshot.png", to: path.resolve(__dirname, "./dist") },
-          { from: "acf", to: path.resolve(__dirname, "./dist/acf") },
+          { from: "includes", to: path.resolve(__dirname, "./dist/includes") },
           { from: "assets", to: path.resolve(__dirname, "./dist/assets") },
           { from: "modules", to: path.resolve(__dirname, "./dist/modules") },
           { from: "public", to: path.resolve(__dirname, "./dist/public") },

@@ -7,10 +7,15 @@ import MobileMenu from './assets/scripts/mobile-menu/mobile-menu';
 document.addEventListener('DOMContentLoaded', function() {
 
   // Import mobile menu script
-  if ("ontouchstart" in document.documentElement) {
-    if (document.querySelector('header.mobile')) {
-      const mobileMenu = new MobileMenu();
-      mobileMenu.init();
-    }
+  if (document.querySelector('header.mobile')) {
+    const mobileMenu = new MobileMenu();
+    mobileMenu.init();
   }
 });
+
+// Import GDYMC module scripts
+function importAll(r) {
+  r.keys().forEach(r);
+}
+
+importAll(require.context('./modules/', true, /\.index\.js$/));

@@ -1,53 +1,33 @@
-.module {
-  position: relative;
-
-  &.pt {
-    padding-top: var(--outer-spacing-sm);
-  }
-
-  &.pb {
-    padding-bottom: var(--outer-spacing-sm);
-  }
-
-  @include device-size('tablet') {
-    &.pt {
-      padding-top: var(--outer-spacing-md);
+.gdymc_module {
+  &.connect-lower {
+    .module:not([connect='false']) {
+      padding-bottom: 0;
     }
 
-    &.pb {
-      padding-bottom: var(--outer-spacing-md);
-    }
-  }
-
-  @include device-size('desktop') {
-    &.pt {
-      padding-top: var(--outer-spacing-lg);
-    }
-
-    &.pb {
-      padding-bottom: var(--outer-spacing-lg);
+    + .gdymc_module {
+      .module:not([connect='false']) {
+        padding-top: 0;
+      }
     }
   }
 }
 
-@include device-size('desktop') {
-  .gdymc_module {
-    &:first-child:not(.gdymc_module_hero) {
-      &.pt {
-        padding-top: calc(var(--outer-spacing-lg) + 80px);
-      }
-  
-      padding-top: calc(var(--outer-spacing-lg) + 80px);
-    }
-  }
-
-  .frontpage__main .gdymc_module {
-    &:first-child {
-      &.pt {
-        padding-top: 0;
-      }
-  
+.gdymc_module {
+  &.connect-upper {
+    .module:not([connect='false']) {
       padding-top: 0;
     }
   }
+
+  &:has(+ .gdymc_module.connect-upper) {
+    .module:not([connect='false']) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.module {
+  position: relative;
+
+  padding: var(--module-spacing) 0;
 }

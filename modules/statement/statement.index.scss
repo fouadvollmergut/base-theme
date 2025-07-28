@@ -1,0 +1,56 @@
+.statement {
+  .content--text {
+    position: relative;
+    height: 100%;
+  }
+
+  .content--button {
+    z-index: 1;
+
+    .buttonbox {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: var(--text-padding-y) var(--text-padding-x);
+      height: 100%;
+
+      .gdymc_button-group_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+      }
+
+      .gdymc_button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: var(--inner-spacing-sm);
+      }
+    }
+  }
+
+  .textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: var(--inner-spacing-xl);
+    padding: var(--text-padding-y) var(--text-padding-x);
+  }
+}
+
+@include device-size('tablet') {
+  .statement {
+    min-height: 50vh;
+
+    .content--button {
+      .buttonbox {
+        flex-direction: column;
+      }
+    }
+  }
+}

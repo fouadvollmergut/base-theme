@@ -1,0 +1,12 @@
+.text_1col {
+  .content--text {
+    .textbox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: var(--inner-spacing-md);
+      padding: var(--text-padding-y) var(--text-padding-x);
+      height: 100%;
+    }
+  }
+}

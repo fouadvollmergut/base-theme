@@ -1,0 +1,32 @@
+.banner {
+  .content--text {
+    .textbox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--inner-spacing-md);
+
+      @include device-size('tablet') {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--inner-spacing-lg);
+      }
+
+      .gdymc_button-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: var(--inner-spacing-sm) var(--inner-spacing-lg);
+        padding: 0;
+      }
+
+      > * {
+        width: max-content;
+      }
+    }
+  }
+}

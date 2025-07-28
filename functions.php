@@ -2,10 +2,22 @@
 
   // THEME
 
-  // THEME Support
+  // THEME Support Customizer
 
   add_theme_support( 'custom-logo' );
   add_theme_support( 'post-thumbnails' );
+
+  // THEME Disable Gutenberg
+
+  add_action('admin_menu', function() {  
+    remove_submenu_page( 'themes.php', 'site-editor.php?p=/pattern' );
+    remove_submenu_page( 'themes.php', 'site-editor.php?path=/patterns' );
+    remove_submenu_page( 'themes.php', 'edit.php?post_type=wp_block' );
+  });
+
+  // THEME Disable Comments
+
+  include_once( get_template_directory() . '/includes/disable-comments.php' );
 
   // THEME Menus
 
@@ -51,22 +63,16 @@
 
   // GDYMC
 
-  // GDYMC Module Folder
-
-  add_filter('gdymc_modules_folder', 'custom_gdymc_folder');
-
-  function custom_gdymc_folder () {
-    return get_template_directory() . '/modules';
-  }
-
   // GDYMC Global Module Settings
 
-  add_action( 'gdymc_module_options_settings', 'add_global_gdymc_module_options_settings');
-   
-  function add_global_gdymc_module_options_settings ($module) {
-    $excludedModules = array();
+  // GDYMC Add module connection option
 
-    if (in_array($module->type, $excludedModules)) {
+  add_action( 'gdymc_module_options_settings', 'add_global_gdymc_module_connection_options_settings');
+   
+  function add_global_gdymc_module_connection_options_settings ($module) {
+    $excludedConnectionOptionsModules = array();
+
+    if (in_array($module->type, $excludedConnectionOptionsModules)) {
       return;
     }
 
@@ -83,14 +89,87 @@
     ), $module->id );
   }
 
-  // GDYMC Add module bakcground class
+  // GDYMC Add module connection class
+
+  add_filter( 'gdymc_module_class', 'add_connection_class', 10, 1);
+
+  function add_connection_class($classes) {
+    $classes[] = optionGet('connect');
+    return $classes;
+  }
+
+  // GDYMC Add module background option
+
+  add_action( 'gdymc_module_options_settings', 'add_global_gdymc_module_background_options_settings');
+
+  function add_global_gdymc_module_background_options_settings ($module) {
+    $excludedBackgroundOptionsModules = array();
+
+    if (in_array($module->type, $excludedBackgroundOptionsModules)) {
+      return;
+    }
+
+    optionInput( 'background', array(
+      'type' => 'select',
+      'default' => 'background-none',
+      'label' => __( 'Modul Hintergrund', 'Theme' ),
+      'options' => array(
+        'background-none' => __( 'Kein Hintergrund', 'Theme' ),
+        'background-neutral' => __( 'Neutraler Hintergrund', 'Theme' ),
+        'background-light' => __( 'Heller Hintergrund', 'Theme' ),
+        'background-dark' => __( 'Dunkler Hintergrund', 'Theme' ),
+        'background-accent' => __( 'Akzent Hintergrund', 'Theme' )
+      )
+    ), $module->id );
+  }
+
+  // GDYMC Add module background class
 
   add_filter( 'gdymc_module_class', 'add_background_class', 10, 1);
 
   function add_background_class($classes) {
-    $classes[] = optionGet('connect');
+    $classes[] = optionGet('background');
     return $classes;
   }
+
+  // GDYMC Module SEO Position
+
+  add_action( 'gdymc_module_options_settings', 'add_global_gdymc_module_seo_options_settings');
+
+  function add_global_gdymc_module_seo_options_settings ($module) {
+    $excludedSeoOptionsModules = array(
+      'themes/theme/modules/image',
+      'themes/theme/modules/text_1col'
+    );
+
+    if (in_array($module->type, $excludedSeoOptionsModules)) {
+      return;
+    }
+
+    optionInput( 'seo-position', array(
+      'type' => 'select',
+      'default' => 'h2',
+      'label' => __( 'Modul SEO Position', 'Theme' ),
+      'options' => array(
+        'h1' => __( 'H1', 'Theme' ),
+        'h2' => __( 'H2', 'Theme' ),
+        'h3' => __( 'H3', 'Theme' ),
+        'h4' => __( 'H4', 'Theme' ),
+        'h5' => __( 'H5', 'Theme' ),
+        'h6' => __( 'H6', 'Theme' )
+      )
+    ), $module->id );
+  }
+
+  // GDYMC Add image caption
+
+  add_action('gdymc_image_after', function ($imageID, $imageSize) {
+    $imageCaption = wp_get_attachment_caption( $imageID );
+
+    if( !empty( $imageCaption ) ):
+      echo '<figcaption class="gdymc-image-caption">' . $imageCaption . '</figcaption>';
+    endif;
+  }, 10, 2);
 
 
   // ACF
