@@ -138,8 +138,7 @@
 
   function add_global_gdymc_module_seo_options_settings ($module) {
     $excludedSeoOptionsModules = array(
-      'themes/theme/modules/image',
-      'themes/theme/modules/text_1col'
+      'themes/theme/modules/image'
     );
 
     if (in_array($module->type, $excludedSeoOptionsModules)) {
