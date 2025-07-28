@@ -12,7 +12,7 @@
             </span>
 
             <div class="company-information">
-              <?php echo htmlspecialchars_decode(get_option( 'custom_company_information' )); // General Settings ?>
+              <?php echo wpautop(htmlspecialchars_decode(get_option( 'custom_company_information' ))); // General Settings ?>
             </div>
             
             <div class="copyright">
