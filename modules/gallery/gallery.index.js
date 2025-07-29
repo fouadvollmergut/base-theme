@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 loop: true,
                 slidesPerView: 1,
-                autoplay: {
-                  delay: 2500,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true
-                }
+                // autoplay: {
+                //   delay: 2500,
+                //   disableOnInteraction: false,
+                //   pauseOnMouseEnter: true
+                // }
               });
             });
           });
