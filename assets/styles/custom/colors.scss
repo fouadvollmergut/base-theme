@@ -66,6 +66,21 @@
   &-neutral {
     background-color: #f3f3f3;
 
+    .gdymc_text {
+      a {
+        background: linear-gradient(to right, rgba(var(--base-color-rgb), .5), rgba(var(--base-color-rgb), .5));
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 0% 2px;
+      }
+
+      ul, ol {
+        li::marker {
+          color: var(--text-color-dark);
+        }
+      }
+    }
+
     .gdymc_moduleinner {
       h1, h2, h3, h4, h5, h6, p, span, q, a,
       .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
@@ -97,6 +112,21 @@
 
   &-light {
     background-color: var(--base-color-background-light);
+
+    .gdymc_text {
+      a {
+        background: linear-gradient(to right, var(--base-color-dark), var(--base-color-dark));
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 0% 2px;
+      }
+
+      ul, ol {
+        li::marker {
+          color: var(--base-color-dark);
+        }
+      }
+    }
 
     .gdymc_moduleinner {
       h1, h2, h3, h4, h5, h6, p, span, q, a,
@@ -130,6 +160,21 @@
   &-dark {
     background-color: var(--base-color-background-dark);
 
+    .gdymc_text {
+      a {
+        background: linear-gradient(to right, var(--base-color), var(--base-color));
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 0% 2px;
+      }
+
+      ul, ol {
+        li::marker {
+          color: var(--base-color);
+        }
+      }
+    }
+
     .gdymc_moduleinner {
       h1, h2, h3, h4, h5, h6, p, span, q, a,
       .h1, .h2, .h3, .h4, .h5, .h6, .p, .span, .q,
@@ -161,6 +206,21 @@
 
   &-accent {
     background-color: var(--accent-color);
+
+    .gdymc_text {
+      a {
+        background: linear-gradient(to right, var(--accent-color-dark), var(--accent-color-dark));
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 0% 2px;
+      }
+
+      ul, ol {
+        li::marker {
+          color: var(--accent-color-dark);
+        }
+      }
+    }
 
     .gdymc_moduleinner {
       h1, h2, h3, h4, h5, h6, p, span, q, a,

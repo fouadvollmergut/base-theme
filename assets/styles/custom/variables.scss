@@ -13,6 +13,22 @@
 
   --text-padding-x: 0.5rem;
   --text-padding-y: 0.5rem;
+
+
+  // Shadows
+
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low:
+    0.2px 0.2px 0.4px hsl(var(--shadow-color) / 0.02),
+    0.6px 0.8px 1.4px -0.4px hsl(var(--shadow-color) / 0.12);
+  --shadow-elevation-medium:
+    0.2px 0.2px 0.4px hsl(var(--shadow-color) / 0.03),
+    3.1px 4.1px 7.4px -0.4px hsl(var(--shadow-color) / 0.17);
+  --shadow-elevation-high:
+    0.2px 0.2px 0.4px hsl(var(--shadow-color) / 0.03),
+    2.8px 3.6px 6.5px -0.1px hsl(var(--shadow-color) / 0.09),
+    6.3px 8.3px 14.9px -0.3px hsl(var(--shadow-color) / 0.16),
+    13.9px 18.3px 32.9px -0.4px hsl(var(--shadow-color) / 0.23);
 }
 
 @include device-size($device: 'tablet') {

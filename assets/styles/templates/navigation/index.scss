@@ -14,6 +14,7 @@ header {
   z-index: 1000;
   height: var(--navigation-height);
   background-color: var(--mainmenu-background-color);
+  box-shadow: var(--shadow-elevation-medium);
 
   .header.desktop {
     display: none;
@@ -96,8 +97,10 @@ header {
               > a {
                 display: block;
                 color: var(--submenu-text-color);
-                padding: var(--inner-spacing-sm) var(--inner-spacing-md);
+                padding: 0 var(--inner-spacing-md);
                 text-decoration: none;
+
+                transition: padding 0.12s ease-in-out;
               }
             }
           }
@@ -114,6 +117,11 @@ header {
               height: calc-size(auto, size);
               opacity: 1;
               pointer-events: auto;
+              box-shadow: var(--shadow-elevation-high);
+
+              > li > a {
+                padding: var(--inner-spacing-sm) var(--inner-spacing-md);
+              }
             }
           }
         }
