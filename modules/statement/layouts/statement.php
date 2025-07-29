@@ -9,7 +9,7 @@
     <?php endif; ?>
 
     <?php if (contentCheck('quote')): ?>
-      <h2><?php contentCreate('quote', $seoPosition . '/text', 'auto', 'h2'); ?></h2>
+      <?php contentCreate('quote', $seoPosition . '/text', 'auto', 'h2'); ?>
     <?php endif; ?>
   </div>
 </div>

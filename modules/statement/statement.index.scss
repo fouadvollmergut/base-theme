@@ -45,8 +45,6 @@
 
 @include device-size('tablet') {
   .statement {
-    min-height: 50vh;
-
     .content--button {
       .buttonbox {
         flex-direction: column;
