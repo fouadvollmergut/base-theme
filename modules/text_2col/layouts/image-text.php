@@ -24,7 +24,7 @@
 
 <div class="content--text <?php echo 'col-' . $elm1col; ?>">
   <div class="textbox">
-    <div>
+    <div class="textbox-inner">
       <?php if (contentCheck('headline')): ?>
         <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h4'); ?>
       <?php endif; ?>
