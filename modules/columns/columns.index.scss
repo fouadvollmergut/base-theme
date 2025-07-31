@@ -40,7 +40,7 @@
         flex-basis: auto;
         max-width: unset;
         justify-content: flex-start;
-        padding: var(--inner-spacing-sm);
+        padding: var(--text-padding-y) var(--text-padding-x);
         gap: var(--inner-spacing-sm);
         background-color: #f3f3f3;
 
@@ -67,7 +67,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: var(--text-padding-y) var(--text-padding-x);
       background-color: #f3f3f3;
+      gap: var(--inner-spacing-sm);
 
       &:last-child {
         border-right: none;
@@ -79,7 +81,6 @@
       flex-direction: column;
       justify-content: flex-start;
       gap: var(--inner-spacing-sm);
-      padding: var(--text-padding-y) var(--text-padding-x);
 
       img, .img {
         width: 100%;
@@ -88,17 +89,11 @@
       }
     }
 
-    .h2 {
-      padding: var(--inner-spacing-sm);
-    }
-
     .column-content {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       gap: var(--inner-spacing-md);
-      padding: 0 var(--text-padding-x);
-      padding-bottom: var(--text-padding-y);
 
       .gdymc_button-group {
         gap: var(--inner-spacing-sm);
@@ -129,15 +124,6 @@
             padding: var(--text-padding-y) var(--inner-spacing-sm);
           }
         }
-
-        .h2 {
-          padding: var(--text-padding-y) var(--inner-spacing-sm);
-        }
-
-        .column-content {
-          padding: 0 var(--inner-spacing-sm);
-          padding-bottom: var(--text-padding-y);
-        }
       }
     }
   }
@@ -146,32 +132,40 @@
 .background {
   &-neutral {
     .columns {
-      .column {
-        background-color: var(--base-color-light);
+      .content--columns:is(.horizontal, .vertical) {
+        > .column {
+          background-color: var(--base-color-light);
+        }
       }
     }
   }
 
   &-light {
     .columns {
-      .column {
-        background-color: var(--base-color-light);
+      .content--columns:is(.horizontal, .vertical) {
+        > .column {
+          background-color: var(--base-color-light);
+        }
       }
     }
   }
 
   &-dark {
     .columns {
-      .column {
-        background-color: var(--base-color-dark);
+      .content--columns:is(.horizontal, .vertical) {
+        > .column {
+          background-color: var(--base-color-dark);
+        }
       }
     }
   }
 
   &-accent {
     .columns {
-      .column {
-        background-color: var(--accent-color-dark);
+      .content--columns:is(.horizontal, .vertical) {
+        > .column {
+          background-color: var(--accent-color-dark);
+        }
       }
     }
   }

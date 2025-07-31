@@ -6,10 +6,13 @@ footer {
   background-color: var(--footer-background-color);
   color: var(--footer-text-color);
   gap: var(--inner-spacing-lg);
+  box-shadow: var(--shadow-bottom-elevation-medium);
+
 
   .footer {
     position: relative;
     margin-top: var(--outer-spacing-md);
+    width: 100%;
 
     .logo {
       display: flex;
@@ -23,7 +26,12 @@ footer {
     }
 
     .copyright {
+      color: var(--footer-text-color-accent);
       padding-top: var(--inner-spacing-md);
+    }
+
+    .textbox {
+      padding: 0 var(--text-padding-x);
     }
 
     ul.menu {
@@ -37,16 +45,15 @@ footer {
       padding: 0;
 
       li a {
-        color: var(--footer-text-color);
+        color: var(--footer-text-color-accent);
         text-decoration: none;
         font-size: var(--p-font-size);
         font-weight: var(--p-font-weight);
         line-height: 1.5;
-        transition: color 0.15s ease-in-out;
         cursor: pointer;
 
         &:hover {
-          color: var(--accent-color);
+          text-decoration: underline;
         }
       
       }
@@ -55,16 +62,17 @@ footer {
     .company-information {
       p {
         font-size: var(--p-font-size);
-        color: var(--footer-text-color);
+        color: var(--footer-text-color-accent);
         margin-top: var(--inner-spacing-sm);
       }
 
       a {
         color: var(--footer-text-color-accent);
         transition: color 0.15s ease-in-out;
+        text-decoration: none;
 
         &:hover {
-          color: var(--accent-color);
+          text-decoration: underline;
         }
       }
     }
