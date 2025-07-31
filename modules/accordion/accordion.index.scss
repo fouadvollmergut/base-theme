@@ -27,6 +27,8 @@
     justify-content: flex-start;
     gap: 2px;
     list-style: none;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
 
     .accordion-outer {
       position: relative;

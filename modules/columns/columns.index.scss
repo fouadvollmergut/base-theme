@@ -27,7 +27,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 2px;
     margin: 0;
     padding: 0;
 
@@ -43,6 +42,7 @@
         padding: var(--text-padding-y) var(--text-padding-x);
         gap: var(--inner-spacing-sm);
         background-color: #f3f3f3;
+        border-radius: var(--border-radius-lg);
 
         .column-header {
           .gdymc_image {
@@ -55,6 +55,7 @@
     &.horizontal {
       flex-direction: row;
       height: 100%;
+      gap: var(--inner-spacing-sm);
     }
 
     > * {
@@ -70,6 +71,7 @@
       padding: var(--text-padding-y) var(--text-padding-x);
       background-color: #f3f3f3;
       gap: var(--inner-spacing-sm);
+      border-radius: var(--border-radius-lg);
 
       &:last-child {
         border-right: none;
@@ -110,8 +112,11 @@
       flex-wrap: wrap;
       gap: 2px;
 
-      > * {
-        max-width: calc(100% / 3 - 2px);
+      &.horizontal {
+        .column {
+          flex-basis: calc(100% / 2 - var(--inner-spacing-sm));
+          max-width: calc(100% / 2 - var(--inner-spacing-sm));
+        }
       }
 
       .column {
@@ -123,6 +128,17 @@
           h6.subline {
             padding: var(--text-padding-y) var(--inner-spacing-sm);
           }
+        }
+      }
+    }
+  }
+
+  @include device-size('desktop') {
+    .content--columns {
+      &.horizontal {
+        .column {
+          flex-basis: calc(100% / 3 - var(--inner-spacing-sm));
+          max-width: calc(100% / 3 - var(--inner-spacing-sm));
         }
       }
     }

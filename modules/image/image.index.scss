@@ -7,13 +7,14 @@
 .image {
   .content--image {
     z-index: 1;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
 
     .img {
       width: 100%;
       height: 100%;
       max-height: var(--max-image-height);
       object-fit: cover;
-      overflow: hidden;
       aspect-ratio: var(--desktop-aspect-ratio);
     }
 

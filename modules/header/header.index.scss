@@ -32,6 +32,7 @@
     z-index: 1;
     pointer-events: none;
     background-color: #f3f3f3;
+    border-radius: var(--border-radius-lg);
 
     > * {
       pointer-events: all;
