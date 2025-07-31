@@ -121,10 +121,11 @@
 
     input, select {
       width: 100%;
-      padding: var(--inner-spacing-sm);
+      padding: var(--inner-spacing-md);
       outline: none;
       box-shadow: none;
       border: none;
+      border-radius: var(--border-radius-md);
       background-color: rgba(17, 17, 17, 0.05);
       color: var(--text-color-dark);
       font-family: var(--base-font-family);
@@ -132,25 +133,36 @@
       font-weight: var(--p-font-weight);
       letter-spacing: var(--p-letter-spacing);
 
+      transition: box-shadow 0.22s ease-in-out;
+
+      &:focus {
+        box-shadow: var(--shadow-elevation-medium);
+      }
+
       &::placeholder {
         font-family: var(--base-font-family);
-        color: var(--ES-BG-80);
+        color: var(--text-color-dark);
         font-size: var(--p-font-size);
         font-weight: var(--p-font-weight);
+      }
+
+      @include device-size('tablet') {
+        padding: var(--inner-spacing-sm);
       }
     }
 
     input:is([type="text"], [type="email"], [type="tel"]).invalid,
     select.invalid {
-      outline: 2px solid var(--ES-RO-100);
+      outline: 2px solid var(--error-color);
     }
 
     textarea {
       width: 100%;
-      padding: var(--inner-spacing-sm);
+      padding: var(--inner-spacing-md);
       outline: none;
       box-shadow: none;
       border: none;
+      border-radius: var(--border-radius-md);
       background-color: rgba(17, 17, 17, 0.05);
       color: var(--text-color-dark);
       font-family: var(--base-font-family);
@@ -160,11 +172,21 @@
       overflow-y: hidden;
       resize: none;
 
+      transition: box-shadow 0.22s ease-in-out;
+
+      &:focus {
+        box-shadow: var(--shadow-elevation-medium);
+      }
+
       &::placeholder {
         font-family: var(--base-font-family);
-        color: var(--ES-BG-80);
+        color: var(--text-color-dark);
         font-size: var(--p-font-size);
         font-weight: var(--p-font-weight);
+      }
+
+      @include device-size('tablet') {
+        padding: var(--inner-spacing-sm);
       }
     }
 
@@ -177,61 +199,75 @@
 
       &.populated {
         padding: var(--inner-spacing-md);
-        background-color: var(--ES-BG-40);
+        background-color: rgba(17, 17, 17, 0.05);
       }
-
 
       .filePreviewItem {
         display: flex;
         flex-basis: 50%;
         flex-direction: column;
-        background-color: var(--ES-BG-20);
+        background-color: rgba(17, 17, 17, 0.5);
 
         span {
           font-size: var(--caption-font-size);
           padding: var(--inner-spacing-sm);
+          color: var(--text-color-light);
         }
       }
     }
 
     input[type="checkbox"] {
-      width: auto;
-      display: inline;
-      margin-right: var(--inner-spacing-lg);
-      align-self: flex-start;
+      position: relative;
+      z-index: 0;
+      -webkit-appearance: none;
+      background-color: transparent;
+      width: 0;
+      padding: 0;
+
+      &.invalid {
+        border-radius: 0;
+        border-left: 2px solid var(--error-color) !important;
+        padding-left: 10px;
+      }
 
       + label {
-        display: inline;
+        position: relative;
+        display: inline-block;
         align-self: center;
+        margin-left: 25px;
+        cursor: pointer;
+      }
+
+      + label::before {
+        width: 15px;
+        height: 15px;
+        border-radius: var(--border-radius-md);
+        border: 2px solid rgba(17, 17, 17, 0.5);
+        background-color: #ffffff;
+        display: block;
+        content: "";
+        float: left;
+        margin-right: 5px;
+        z-index: 5;
+        position: relative;
+        margin-left: -25px;
+      }
+
+      &:checked+label::before {
+        box-shadow: inset 0px 0px 0px 3px #ffffff;
+        background-color: rgba(17, 17, 17, 0.5);
       }
     }
 
     .gdymc_button_container {
       margin-top: var(--inner-spacing-lg);
-
-      &:after {
-        color: var(--ES-RO-100);
-      }
-
-      &:before {
-        background-color: var(--ES-RO-100) !important;
-      }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: var(--inner-spacing-sm);
 
       .submit_underline {
         position: relative;
-        margin-right: 40px; // Custom for input submit
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 2px;
-          background-color: var(--ES-RO-100);
-
-          transition: width 0.2s ease-in-out;
-        }
       }
 
       &:hover .submit_underline:after {
@@ -262,9 +298,48 @@
 .background {
   &-neutral {
     .form {
+      form .filePreview {
+        &.populated {
+          background-color: rgba(17, 17, 17, 0.05);
+        }
+
+        .filePreviewItem {
+          background-color: rgba(17, 17, 17, 0.5);
+        }
+      }
+
       input, select, textarea {
         background-color: rgba(17, 17, 17, 0.05);
         color: var(--text-color-dark);
+
+        &::placeholder {
+          color: var(--text-color-dark);
+        }
+      }
+
+      input[type="checkbox"] {
+        + label {
+          color: var(--text-color-dark);
+        }
+
+        + label::before {
+          border: 2px solid rgba(17, 17, 17, 0.5);
+          background-color: #f3f3f3;
+        }
+
+        &:checked+label::before {
+          box-shadow: inset 0px 0px 0px 3px #f3f3f3;
+          background-color: rgba(17, 17, 17, 0.5);
+        }
+      }
+
+      input[type="submit"].button {
+        background-color: var(--accent-color);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--accent-color);
+        }
       }
 
       label {
@@ -275,9 +350,48 @@
 
   &-light {
     .form {
+      form .filePreview {
+        &.populated {
+          background-color: var(--base-color-light);
+        }
+
+        .filePreviewItem {
+          background-color: var(--base-color);
+        }
+      }
+
       input, select, textarea {
         background-color: var(--base-color-light);
         color: var(--text-color-dark);
+
+        &::placeholder {
+          color: var(--text-color-dark);
+        }
+      }
+
+      input[type="checkbox"] {
+        + label {
+          color: var(--text-color-dark);
+        }
+
+        + label::before {
+          border: 2px solid var(--base-color);
+          background-color: var(--base-color-background-light);
+        }
+
+        &:checked+label::before {
+          box-shadow: inset 0px 0px 0px 3px var(--base-color-background-light);
+          background-color: var(--base-color);
+        }
+      }
+
+      input[type="submit"].button {
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
       }
 
       label {
@@ -288,9 +402,48 @@
 
   &-dark {
     .form {
+      form .filePreview {
+        &.populated {
+          background-color: var(--base-color-dark);
+        }
+
+        .filePreviewItem {
+          background-color: var(--base-color);
+        }
+      }
+
       input, select, textarea {
         background-color: var(--base-color-dark);
         color: var(--text-color-light);
+
+        &::placeholder {
+          color: var(--text-color-light);
+        }
+      }
+
+      input[type="checkbox"] {
+        + label {
+          color: var(--text-color-light);
+        }
+
+        + label::before {
+          border: 2px solid var(--base-color);
+          background-color: var(--base-color-background-dark);
+        }
+
+        &:checked+label::before {
+          box-shadow: inset 0px 0px 0px 3px var(--base-color-background-dark);
+          background-color: var(--base-color);
+        }
+      }
+
+      input[type="submit"].button {
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
       }
 
       label {
@@ -301,9 +454,48 @@
 
   &-accent {
     .form {
+      form .filePreview {
+        &.populated {
+          background-color: var(--accent-color-dark);
+        }
+
+        .filePreviewItem {
+          background-color: var(--accent-color);
+        }
+      }
+
       input, select, textarea {
         background-color: var(--accent-color-dark);
         color: var(--text-color-light);
+
+        &::placeholder {
+          color: var(--text-color-light);
+        }
+      }
+
+      input[type="checkbox"] {
+        + label {
+          color: var(--text-color-light);
+        }
+
+        + label::before {
+          border: 2px solid var(--accent-color-dark);
+          background-color: var(--accent-color);
+        }
+
+        &:checked+label::before {
+          box-shadow: inset 0px 0px 0px 3px var(--accent-color);
+          background-color: var(--accent-color-dark);
+        }
+      }
+
+      input[type="submit"].button {
+        background-color: var(--accent-color-dark);
+        color: var(--text-color-light);
+
+        &:hover {
+          background-color: var(--accent-color-darker);
+        }
       }
 
       label {

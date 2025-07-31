@@ -100,6 +100,24 @@
     ></textarea>
   </div>
 
+   <div class="input-container flex column space-between">
+    <label 
+      class="<?php echo $showLabels; ?> required"
+      for="file">
+      <?php _e('Datei', 'Theme'); ?>
+    </label>
+
+    <input 
+      type="file"
+      name="file"
+      e-focusout="checkFormInput"
+      e-change="handleFilePreview"
+      required
+    />
+
+    <div class="filePreview"></div>
+  </div>
+
   <div class="footer-container flex row space-between">
     <div class="flex row-static space-between" e-click="checkChildCheckbox">
       <input 
