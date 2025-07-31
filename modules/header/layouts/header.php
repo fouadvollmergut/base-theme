@@ -10,7 +10,7 @@
 </div>
 
 <div class="subgrid">
-  <div class="content--text col-w6p1 <?php echo $background; ?>">
+  <div class="content--text col-w6p1 <?php echo $background; ?>" <?php if ($animation) echo 'data-aos="zoom-in"'; ?>>
     <div class="textbox">
       <?php if (contentCheck('subline')): ?>
         <?php contentCreate('subline', 'span/text', 'auto', 'subline'); ?>

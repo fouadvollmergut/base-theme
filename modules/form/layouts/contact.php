@@ -3,9 +3,10 @@
   $recipient = optionGet('recipient');
   $subject = optionGet('subject');
   $seoPosition = optionGet('seo-position');
+  $animation = optionGet('animation');
 ?>
 
-<div class="form--text col-w2p1">
+<div class="form--text col-w2p1" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
   <div class="textbox">
     <div>
       <?php if( contentCheck( 'headline' ) ): ?>
@@ -27,6 +28,7 @@
   class="form--form col-w4p3" 
   data-recipient="<?php echo $recipient; ?>" 
   data-subject="<?php echo $subject; ?>"
+  <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>
 >
   <div class="form--row">
     <div class="input-container flex column space-between">

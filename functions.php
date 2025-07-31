@@ -160,6 +160,28 @@
     ), $module->id );
   }
 
+  // GDYMC Module Animation
+
+  add_action( 'gdymc_module_options_settings', 'add_global_gdymc_module_animation_options_settings');
+
+  function add_global_gdymc_module_animation_options_settings ($module) {
+    $excludedAnimationOptionsModules = array();
+
+    if (in_array($module->type, $excludedAnimationOptionsModules)) {
+      return;
+    }
+
+    optionInput( 'animation', array(
+      'type' => 'select',
+      'default' => false,
+      'label' => __( 'Modul Animation', 'Theme' ),
+      'options' => array(
+        false => __( 'Nein', 'Theme' ),
+        true => __( 'Ja', 'Theme' )
+      ),
+    ), $module->id );
+  }
+
   // GDYMC Add image caption
 
   add_action('gdymc_image_after', function ($imageID, $imageSize) {

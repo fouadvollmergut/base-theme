@@ -4,9 +4,10 @@
   $elements = optionGet('elements');
   $elements = explode("\n", $elements);
   $seoPosition = optionGet('seo-position');
+  $animation = optionGet('animation');
 ?>
 
-<div class="content--text col-w2p1">
+<div class="content--text col-w2p1" <?php if ($layout === '2') echo 'data-aos="fade-up"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('headline')): ?>
       <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h4'); ?>
@@ -26,7 +27,7 @@
 
 <ul class="content--columns <?php echo $alignment; ?> col-w4p3">
   <?php foreach ($elements as $key => $element): ?>
-    <li class="column" data-key="<?php echo $key; ?>">
+    <li class="column" data-key="<?php echo $key; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
       <?php if ($layout === '2'): ?>
         <div class="column-header">
           <?php if (contentCheck('image_' . $key)): ?>

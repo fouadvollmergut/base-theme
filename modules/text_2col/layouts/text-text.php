@@ -1,6 +1,7 @@
 <?php
   $reverse = optionGet('reverse');
   $seoPosition = optionGet('seo-position');
+  $animation = optionGet('animation');
 
   $elm1col = '';
   $elm2col = '';
@@ -14,7 +15,7 @@
     }
 ?>
 
-<div class="content--text col-w2p1">
+<div class="content--text col-w2p1" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('headline')): ?>
       <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h4'); ?>
@@ -26,7 +27,7 @@
   </div>
 </div>
 
-<div class="content--text <?php echo 'col-' . $elm2col; ?>">
+<div class="content--text <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('copy-2')): ?>
       <?php contentCreate('copy-2', 'text'); ?>
@@ -34,7 +35,7 @@
   </div>
 </div>
 
-<div class="content--text <?php echo 'col-' . $elm1col; ?>">
+<div class="content--text <?php echo 'col-' . $elm1col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('copy-1')): ?>
       <?php contentCreate('copy-1', 'text'); ?>

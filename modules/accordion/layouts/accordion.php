@@ -4,6 +4,7 @@
   $hideImage = optionGet('hideImage');
   $elements = optionGet('elements');
   $elements = explode("\n", $elements);
+  $animation = optionGet('animation');
 
   $elm1col = '';
   $elm2col = '';
@@ -17,7 +18,7 @@
   }
 ?>
 
-<div class="content--text <?php echo 'col-' . $elm2col; ?>">
+<div class="content--text <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
   <div class="textbox">
     <div>
       <?php if (contentCheck('headline')): ?>
@@ -35,7 +36,7 @@
   </div>
 </div>
 
-<ul class="accordion-container <?php echo 'col-' . $elm1col; ?>">
+<ul class="accordion-container <?php echo 'col-' . $elm1col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
   <?php foreach ($elements as $key => $element): ?>
     <li class="accordion-outer" data-key="<?php echo $key; ?>">
       <div class="accordion-header">
