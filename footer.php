@@ -6,7 +6,7 @@
     <footer>
       <div class="footer grid">
         <div class="subgrid">
-          <div class="col-w2p1">
+          <div class="col-w3p1">
             <span class="logo">
               <?php the_custom_logo(); ?>
             </span>
@@ -20,16 +20,22 @@
             </div>
           </div>
 
-          <div class="col-d4pauto">
-            <?php wp_nav_menu( array( 'theme_location' => 'footer-left' ) ); ?>
+          <div class="col-w1p4">
+            <div class="textbox">
+              <?php wp_nav_menu( array( 'theme_location' => 'footer-left' ) ); ?>
+            </div>
           </div>
 
-          <div class="col-d4pauto">
-            <?php wp_nav_menu( array( 'theme_location' => 'footer-right' ) ); ?>
+          <div class="col-w1p5">
+            <div class="textbox">
+              <?php wp_nav_menu( array( 'theme_location' => 'footer-right' ) ); ?>
+            </div>
           </div>
 
-          <div class="col-d4pauto">
-            <?php wp_nav_menu( array( 'theme_location' => 'legal' ) ); ?>
+          <div class="col-w1p6">
+            <div class="textbox">
+              <?php wp_nav_menu( array( 'theme_location' => 'legal' ) ); ?>
+            </div>
           </div>
         </div>
       </div>
@@ -40,7 +46,7 @@
             <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
           </div>
 
-          <div class="col-w1p5">
+          <div class="col-w2p5">
             <div class="fvg_backlink">
               <a 
                 href="https://fouadvollmergut.de?utm_campaign=Website+Customer+Referral&utm_medium=referral&utm_source=<?php echo urlencode($_SERVER['HTTP_HOST']); ?>&source=<?php echo urlencode(get_bloginfo('name')); ?>" 
