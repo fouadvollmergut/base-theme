@@ -18,7 +18,7 @@
 <div class="content--text col-w4p3" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('copy')): ?>
-      <?php contentCreate('copy', 'p/text'); ?>
+      <?php contentCreate('copy', 'text'); ?>
     <?php endif; ?>
   </div>
 </div>
