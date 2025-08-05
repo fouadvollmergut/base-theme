@@ -14,6 +14,9 @@
   --text-padding-x: 1rem;
   --text-padding-y: 1rem;
 
+  --container-padding-x: 0rem;
+  --container-padding-y: 0rem;
+
   --border-radius-sm: .15rem;
   --border-radius-md: .25rem;
   --border-radius-lg: .5rem;
@@ -63,5 +66,8 @@
 
     --text-padding-x: 2rem;
     --text-padding-y: 2rem;
+
+    --container-padding-x: 2rem;
+    --container-padding-y: 2rem;
   }
 }

@@ -7,6 +7,12 @@
       flex-wrap: wrap;
       align-items: center;
       gap: var(--inner-spacing-md);
+      padding: 0 var(--text-padding-x);
+
+      .gdymc_text, .gdymc_text * {
+        display: inline-block;
+        text-align: center;
+      }
 
       @include device-size('tablet') {
         flex-direction: row;
@@ -22,10 +28,6 @@
         justify-content: flex-start;
         gap: var(--inner-spacing-sm) var(--inner-spacing-lg);
         padding: 0;
-      }
-
-      > * {
-        width: max-content;
       }
     }
   }

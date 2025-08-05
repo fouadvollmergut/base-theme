@@ -86,6 +86,25 @@ img {
   padding-bottom: var(--outer-spacing-md);
 }
 
+// Word wrapping and hyphenation
+
+* {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.gdymc_text,
+.gdymc_text * {
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+  a {
+    word-break: break-all;
+  }
+}
+
 // GDYMC image captions
 
 .gdymc_image.img {

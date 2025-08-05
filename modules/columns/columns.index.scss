@@ -13,6 +13,7 @@
       justify-content: space-between;
       height: 100%;
       gap: var(--inner-spacing-md);
+      padding: var(--text-padding-y) var(--text-padding-x);
     }
   
     .gdymc_button-group {
@@ -28,7 +29,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0;
+    padding: var(--container-padding-y) var(--container-padding-x);
 
     &.vertical {
       flex-direction: column;
@@ -40,7 +41,7 @@
         max-width: unset;
         justify-content: flex-start;
         padding: var(--text-padding-y) var(--text-padding-x);
-        gap: var(--inner-spacing-sm);
+        gap: var(--inner-spacing-md);
         background-color: #f3f3f3;
         border-radius: var(--border-radius-lg);
 
@@ -70,7 +71,7 @@
       justify-content: space-between;
       padding: var(--text-padding-y) var(--text-padding-x);
       background-color: #f3f3f3;
-      gap: var(--inner-spacing-sm);
+      gap: var(--inner-spacing-md);
       border-radius: var(--border-radius-lg);
 
       &:last-child {
