@@ -38,18 +38,19 @@
 
 <ul class="accordion-container <?php echo 'col-' . $elm1col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
   <?php foreach ($elements as $key => $element): ?>
-    <li class="accordion-outer" data-key="<?php echo $key; ?>">
+    <?php $element = explode(":", $element); ?>
+    <li class="accordion-outer" data-key="<?php echo $element[0]; ?>">
       <div class="accordion-header">
-        <div class="subline"><?php echo $element; ?></div><span></span>
+        <div class="subline"><?php echo $element[1] ?? $element[0]; ?></div><span></span>
       </div>
 
       <div class="accordion-inner">
-        <?php if (contentCheck('copy_' . $key)): ?>
-          <?php contentCreate('copy_' . $key, 'span/text'); ?>
+        <?php if (contentCheck('copy_' . $element[0])): ?>
+          <?php contentCreate('copy_' . $element[0], 'span/text'); ?>
         <?php endif; ?>
 
-        <?php if (contentCheck('button_' . $key)): ?>
-          <?php contentCreate('button_' . $key, 'buttongroup'); ?>
+        <?php if (contentCheck('button_' . $element[0])): ?>
+          <?php contentCreate('button_' . $element[0], 'buttongroup'); ?>
         <?php endif; ?>
       </div>
     </li>
