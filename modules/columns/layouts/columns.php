@@ -26,31 +26,31 @@
 </div>
 
 <ul class="content--columns <?php echo $alignment; ?> col-w4p3">
-  <?php foreach ($elements as $key => $element): ?>
-    <li class="column" data-key="<?php echo $key; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
+  <?php foreach ($elements as $element): ?>
+    <li class="column" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
       <?php if ($layout === '2'): ?>
         <div class="column-header">
-          <?php if (contentCheck('image_' . $key)): ?>
-            <?php contentCreate('image_' . $key, 'image', 'autoxauto'); ?>
+          <?php if (contentCheck('image_' . $element)): ?>
+            <?php contentCreate('image_' . $element, 'image', 'autoxauto'); ?>
           <?php endif; ?>
 
-          <?php if (contentCheck('headline_' . $key)): ?>
-            <?php contentCreate('headline_' . $key, 'span/text', 'auto', 'subline'); ?>
+          <?php if (contentCheck('headline_' . $element)): ?>
+            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'subline'); ?>
           <?php endif; ?>
         </div>
       <?php else: ?>
-          <?php if (contentCheck('headline_' . $key)): ?>
-            <?php contentCreate('headline_' . $key, 'span/text', 'auto', 'h2'); ?>
+          <?php if (contentCheck('headline_' . $element)): ?>
+            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'h2'); ?>
           <?php endif; ?>
       <?php endif; ?>
 
       <div class="column-content">
-        <?php if (contentCheck('copy_' . $key)): ?>
-          <?php contentCreate('copy_' . $key, 'text'); ?>
+        <?php if (contentCheck('copy_' . $element)): ?>
+          <?php contentCreate('copy_' . $element, 'text'); ?>
         <?php endif; ?>
 
-        <?php if (contentCheck('button_' . $key)): ?>
-          <?php contentCreate('button_' . $key, 'buttongroup'); ?>
+        <?php if (contentCheck('button_' . $element)): ?>
+          <?php contentCreate('button_' . $element, 'buttongroup'); ?>
         <?php endif; ?>
       </div>
     </li>
