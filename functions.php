@@ -155,7 +155,9 @@
         'h3' => __( 'H3', 'Theme' ),
         'h4' => __( 'H4', 'Theme' ),
         'h5' => __( 'H5', 'Theme' ),
-        'h6' => __( 'H6', 'Theme' )
+        'h6' => __( 'H6', 'Theme' ),
+        'q' => __( 'Quote', 'Theme' ),
+        'span' => __( 'Text', 'Theme' )
       )
     ), $module->id );
   }
