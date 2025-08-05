@@ -1,6 +1,6 @@
 .module.header {
   position: relative;
-  height: 70vh;
+  height: 90vh;
   padding: var(--module-spacing) 0;
 
   .content--image {
@@ -47,6 +47,8 @@
   }
 
   @include device-size('tablet') {
+    height: 70vh;
+
     .content--text {
       padding: var(--inner-spacing-lg);
       gap: var(--inner-spacing-lg);

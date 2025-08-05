@@ -35,12 +35,12 @@
           <?php endif; ?>
 
           <?php if (contentCheck('headline_' . $element)): ?>
-            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'subline'); ?>
+            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline'); ?>
           <?php endif; ?>
         </div>
       <?php else: ?>
           <?php if (contentCheck('headline_' . $element)): ?>
-            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'h2'); ?>
+            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline-numbers'); ?>
           <?php endif; ?>
       <?php endif; ?>
 

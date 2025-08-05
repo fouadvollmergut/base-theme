@@ -42,12 +42,12 @@
         cursor: pointer;
         pointer-events: all;
 
-        div.subline {
+        div.accordion-headline {
           pointer-events: none;
         }
 
         &.accordion--open {
-          &.accordion-header div.subline {
+          &.accordion-header div.accordion-headline {
             font-weight: 600;
           }
   

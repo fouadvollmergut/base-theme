@@ -41,7 +41,7 @@
     <?php $element = explode(":", $element); ?>
     <li class="accordion-outer" data-key="<?php echo $element[0]; ?>">
       <div class="accordion-header">
-        <div class="subline"><?php echo $element[1] ?? $element[0]; ?></div><span></span>
+        <div class="accordion-headline"><?php echo $element[1] ?? $element[0]; ?></div><span></span>
       </div>
 
       <div class="accordion-inner">

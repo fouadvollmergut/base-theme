@@ -124,6 +124,27 @@
   }
 }
 
+.accordion-headline,
+.column-headline {
+  font-family: var(--headline-font-family);
+  font-weight: var(--h5-font-weight);
+  font-size: var(--h5-font-size);
+  line-height: var(--h5-line-height);
+  letter-spacing: var(--h5-letter-spacing);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.column-headline-numbers {
+  font-family: var(--headline-font-family);
+  font-weight: var(--h4-font-weight);
+  font-size: var(--h4-font-size);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
 .gdymc_text :is(b, strong),
 b, strong {
   font-weight: 700;
