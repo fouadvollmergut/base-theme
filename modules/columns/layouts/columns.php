@@ -27,7 +27,7 @@
 
 <ul class="content--columns <?php echo $alignment; ?> col-w4p3">
   <?php foreach ($elements as $element): ?>
-    <li class="column" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="' . ($key % 2 * 100) . '"'; ?>>
+    <li class="column" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="' . (intval($key) % 2 * 100) . '"'; ?>>
       <?php if ($layout === '2'): ?>
         <div class="column-header">
           <?php if (contentCheck('image_' . $element)): ?>
