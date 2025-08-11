@@ -115,4 +115,84 @@
       }
     }
   }
+
+  &.gallery--single {
+    .content--gallery {
+      width: 100%;
+      height: 100%;
+      max-height: var(--max-image-height);
+      aspect-ratio: var(--mobile-aspect-ratio);
+
+        ul {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        li {
+          width: 100% !important;
+          height: 100%;
+        }
+
+        .img, img {
+          width: 100%;
+          height: 100%;
+          max-height: var(--max-image-height);
+          object-fit: cover;
+          aspect-ratio: var(--mobile-aspect-ratio);
+        }
+      }
+    }
+  }
+}
+
+.gallery[data-slides="2"] {
+  @include device-size('tablet') {
+    .swiper-slide-active {
+      margin-right: calc(var(--inner-spacing-md) / 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+
+    .swiper-slide-next {
+      margin-left: calc(var(--inner-spacing-md) / 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+  }
+}
+
+.gallery[data-slides="3"] {
+  @include device-size('tablet') {
+    .swiper-slide-active {
+      margin-right: calc(var(--inner-spacing-md) / 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+
+    .swiper-slide-next {
+      margin-left: calc(var(--inner-spacing-md) / 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+  }
+
+  @include device-size('desktop') {
+    .swiper-slide-active {
+      margin-right: calc(var(--inner-spacing-md) / 3 * 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+
+    .swiper-slide-next {
+      margin: 0 calc(var(--inner-spacing-md) / 3);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+
+    .swiper-slide-next + .swiper-slide {
+      margin-left: calc(var(--inner-spacing-md) / 3 * 2);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+  }
 }

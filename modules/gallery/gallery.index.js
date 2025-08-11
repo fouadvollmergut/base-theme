@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
               const swiperContainer = gallery.querySelector('.gdymc_gallery_container');
               const swiperWrapper = gallery.querySelector('.gdymc_gallery');
               const swiperSlides = swiperWrapper.querySelectorAll('.gdymc_gallery_item');
+              const swiperSlidesPerView = gallery.dataset.slides || 1;
+
+              if (swiperSlides.length < 2) {
+                gallery.querySelector('.content--controls').style.display = 'none';
+                gallery.classList.add('gallery--single');
+                return;
+              }
 
               swiperContainer.classList.add('swiper');
               swiperWrapper.classList.add('swiper-wrapper');
@@ -23,7 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
                   prevEl: gallery.querySelector('.swiper-button-prev')
                 },
                 loop: true,
-                slidesPerView: 1,
+                slidesPerView: swiperSlidesPerView,
+                breakpoints: {
+                  0: {
+                    slidesPerView: 1
+                  },
+                  1024: {
+                    slidesPerView: swiperSlidesPerView > 2 ? 2 : swiperSlidesPerView
+                  },
+                  1400: {
+                    slidesPerView: swiperSlidesPerView
+                  },
+                }
                 // autoplay: {
                 //   delay: 2500,
                 //   disableOnInteraction: false,
