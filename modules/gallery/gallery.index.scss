@@ -1,7 +1,13 @@
 :root {
-  --max-image-height: 80vh;
+  --max-image-height: 60vh;
   --desktop-aspect-ratio: 2 / 1;
   --mobile-aspect-ratio: 1 / 1;
+}
+
+@include device-size('tablet') {
+  :root {
+    --max-image-height: 60vh;
+  }
 }
 
 .gallery {
@@ -48,6 +54,7 @@
       max-height: var(--max-image-height);
       object-fit: cover;
       aspect-ratio: var(--mobile-aspect-ratio);
+      border-radius: var(--border-radius-lg);
     }
   }
 
@@ -148,15 +155,11 @@
 .gallery[data-slides="2"] {
   @include device-size('tablet') {
     .swiper-slide-active {
-      margin-right: calc(var(--inner-spacing-md) / 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-right: calc(var(--inner-spacing-md) / 2);
     }
 
     .swiper-slide-next {
-      margin-left: calc(var(--inner-spacing-md) / 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-left: calc(var(--inner-spacing-md) / 2);
     }
   }
 }
@@ -164,35 +167,25 @@
 .gallery[data-slides="3"] {
   @include device-size('tablet') {
     .swiper-slide-active {
-      margin-right: calc(var(--inner-spacing-md) / 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-right: calc(var(--inner-spacing-md) / 2);
     }
 
     .swiper-slide-next {
-      margin-left: calc(var(--inner-spacing-md) / 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-left: calc(var(--inner-spacing-md) / 2);
     }
   }
 
   @include device-size('desktop') {
     .swiper-slide-active {
-      margin-right: calc(var(--inner-spacing-md) / 3 * 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-right: calc(var(--inner-spacing-md) / 3 * 2);
     }
 
     .swiper-slide-next {
-      margin: 0 calc(var(--inner-spacing-md) / 3);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding: 0 calc(var(--inner-spacing-md) / 3);
     }
 
     .swiper-slide-next + .swiper-slide {
-      margin-left: calc(var(--inner-spacing-md) / 3 * 2);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
+      padding-left: calc(var(--inner-spacing-md) / 3 * 2);
     }
   }
 }
