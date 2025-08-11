@@ -7,10 +7,9 @@
     <meta name="description" content="<?php echo get_bloginfo('description'); ?>">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://use.typekit.net/vao3mrh.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <?php wp_head(); ?>
 

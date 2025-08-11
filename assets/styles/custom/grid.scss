@@ -13,7 +13,7 @@
 }
 
 $grid-col-count: 6;
-$grid-max-width-value: 2000px;
+$grid-max-width-value: 1800px;
 
 $grid-margin-left: var(--grid-margin-left);
 $grid-margin-right: var(--grid-margin-right);
@@ -106,8 +106,8 @@ $grid-col-width: calc((100% - (#{$grid-margin-left} + #{$grid-margin-right})) / 
 @include device-size('tablet') {
   :root {
     // Grid margins are globally accessible
-    --grid-margin-left: 100px;
-    --grid-margin-right: 100px;
+    --grid-margin-left: 50px;
+    --grid-margin-right: 50px;
   }
 
   $grid-margin-left: var(--grid-margin-left);
