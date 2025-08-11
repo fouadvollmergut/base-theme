@@ -10,10 +10,11 @@
   // Grid margins are globally accessible
   --grid-margin-left: 25px;
   --grid-margin-right: 25px;
+  --grid-max-width-value: 1800px;
 }
 
 $grid-col-count: 6;
-$grid-max-width-value: 1800px;
+$grid-max-width-value: var(--grid-max-width-value);
 
 $grid-margin-left: var(--grid-margin-left);
 $grid-margin-right: var(--grid-margin-right);
