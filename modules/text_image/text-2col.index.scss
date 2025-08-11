@@ -1,0 +1,69 @@
+.text-image {
+  .content--text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--inner-spacing-md);
+    height: 100%;
+
+    .imagebox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      img, .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-lg);
+      }
+    }
+
+    .textbox {
+      padding: var(--text-padding-y) var(--text-padding-x);
+    }
+
+    .textbox-container {
+      container-name: text-col;
+      container-type: inline-size;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      gap: var(--inner-spacing-md);
+
+      .textbox-inner {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner-spacing-md);
+        padding: var(--text-padding-y) var(--text-padding-x);
+
+        > * {
+          flex-basis: 100%;
+          padding: 0;
+        }
+      }
+
+      @container text-col (width > 700px) {
+        .textbox-inner {
+          flex-direction: row;
+        }
+      }
+    }
+  
+    .gdymc_button-group {
+      margin-top: var(--inner-spacing-lg);
+      gap: var(--inner-spacing-sm);
+    }
+  }
+
+  @include device-size('tablet') {
+    .content--text {
+      padding: 0;
+    }
+  }
+}
