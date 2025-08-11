@@ -73,6 +73,7 @@
       background-color: #f3f3f3;
       gap: var(--inner-spacing-md);
       border-radius: var(--border-radius-lg);
+      position: relative;
 
       &:last-child {
         border-right: none;
