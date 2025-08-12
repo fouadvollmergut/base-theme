@@ -29,7 +29,6 @@
     list-style: none;
     overflow: hidden;
     border-radius: var(--border-radius-lg);
-    padding: var(--container-padding-y) var(--container-padding-x);
 
     .accordion-outer {
       position: relative;
@@ -70,6 +69,7 @@
         height: 0;
         opacity: 0;
         transform: translateY(-15px);
+        padding: 0 var(--inner-spacing-md);
 
         pointer-events: none;
 
