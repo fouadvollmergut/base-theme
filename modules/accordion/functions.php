@@ -2,11 +2,9 @@
   add_action ('gdymc_module_options_settings', function ( $module ) {
     if ($module->type == gdymc_module_name( __FILE__ )):
 
-      optionInput( 'elements', array(
-        'type' => 'textarea',
-        'label' => __( 'Auflistung der Akkordion-Elemente', 'Theme' ),
-        'description' => __( 'Jedes Element in einer neuen Zeile. Elemente dürfen sich nicht doppeln.', 'Theme' ),
-        'placeholder' => __( 'Headline 1', 'Theme' ) . "\n" . __( 'Headline 2', 'Theme' ) . "\n" . __( 'Headline 3', 'Theme' )
+      optionInput( 'items', array(
+        'type' => 'sortable',
+        'label' => __( 'Auflistung der Accordion-Elemente', 'Theme' ),
       ), $module->id );
 
       optionInput( 'reverse', array(

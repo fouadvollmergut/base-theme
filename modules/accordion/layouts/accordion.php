@@ -2,8 +2,8 @@
   $seoPosition = optionGet('seo-position');
   $reverse = optionGet('reverse');
   $hideImage = optionGet('hideImage');
-  $elements = optionGet('elements');
-  $elements = explode("\n", $elements);
+  $elements = optionGet('items');
+  $elements = explode(",", $elements);
   $animation = optionGet('animation');
   $listOnly = optionGet('list-only');
 
@@ -45,7 +45,8 @@
   <?php foreach ($elements as $key => $element): ?>
     <?php $element = explode(":", $element); ?>
     <li 
-      class="accordion-outer"
+      class="accordion-outer gdymc_sortable_item"
+      data-name="<?php echo substr(str_replace('-', '', $element[0]), 0, 8); ?>"
       data-key="<?php echo $element[0]; ?>"
       <?php if (!$listOnly) echo 'itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"'; ?>
     >
@@ -54,7 +55,9 @@
           class="accordion-headline"
           <?php if (!$listOnly) echo 'itemprop="name"'; ?>
         >
-          <?php echo $element[1] ?? $element[0]; ?>
+          <?php if (contentCheck('title_' . $element[0])): ?>
+            <?php contentCreate('title_' . $element[0], 'span/text', 'auto', 'accordion-title'); ?>
+          <?php endif; ?>
         </div>
         <span></span>
       </div>

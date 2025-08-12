@@ -1,5 +1,5 @@
 <?php 
-  $elements = optionGet('elements');
+  $elements = optionGet('items');
   $listOnly = optionGet('list-only');
 ?>
 
