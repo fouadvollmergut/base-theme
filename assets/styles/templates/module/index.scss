@@ -1,7 +1,7 @@
 .gdymc_module {
   &.connect-lower {
     .module:not([connect='false']) {
-      padding-bottom: 0;
+      padding-bottom: calc(var(--inner-spacing-sm) / 2);
     }
   }
 }
@@ -9,7 +9,7 @@
 .gdymc_module {
   &.connect-upper {
     .module:not([connect='false']) {
-      padding-top: 0;
+      padding-top: calc(var(--inner-spacing-sm) / 2);
     }
   }
 }
