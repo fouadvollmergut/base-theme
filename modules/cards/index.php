@@ -9,8 +9,8 @@
 <?php else: ?>
 
   <section class="grid module">
-    <div class="subgrid columns end">
-      <?php include 'layouts/columns.php'; ?>
+    <div class="subgrid cards end">
+      <?php include 'layouts/cards.php'; ?>
     </div>
   </section>
 

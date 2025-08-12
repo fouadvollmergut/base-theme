@@ -5,7 +5,7 @@
 
       optionInput( 'items', array(
         'type' => 'sortable',
-        'label' => __( 'Auflistung der Spalten-Elemente', 'Theme' ),
+        'label' => __( 'Auflistung der Karten-Elemente', 'Theme' ),
       ), $module->id );
 
       optionInput( 'alignment', array(

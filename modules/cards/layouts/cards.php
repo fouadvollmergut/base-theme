@@ -7,7 +7,7 @@
   $animation = optionGet('animation');
 ?>
 
-<div class="content--text col-w2p1" <?php if ($layout === '2') echo 'data-aos="fade-up"'; ?>>
+<div class="content--text col-w2p1" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
   <div class="textbox">
     <?php if (contentCheck('headline')): ?>
       <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h4'); ?>
@@ -25,17 +25,19 @@
   </div>
 </div>
 
-<ul class="content--columns <?php echo $alignment; ?> col-w4p3">
+<ul class="content--cards <?php echo $alignment; ?> col-w4p3">
   <?php foreach ($elements as $element): ?>
-    <li class="column gdymc_sortable_item" data-name="<?php echo substr(str_replace('-', '', $element), 0, 8); ?>" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="' . (intval($key) % 2 * 100) . '"'; ?>>
+    <li class="card gdymc_sortable_item" data-name="<?php echo substr(str_replace('-', '', $element), 0, 8); ?>" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="' . (intval($key) % 2 * 100) . '"'; ?>>
       <?php if ($layout === '2'): ?>
-        <div class="column-header">
+        <div class="card-header">
           <?php if (contentCheck('image_' . $element)): ?>
             <?php contentCreate('image_' . $element, 'image', 'autoxauto'); ?>
           <?php endif; ?>
 
           <?php if (contentCheck('headline_' . $element)): ?>
-            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline'); ?>
+            <div class="textbox">
+              <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline'); ?>
+            </div>
           <?php endif; ?>
         </div>
       <?php else: ?>
@@ -44,7 +46,7 @@
           <?php endif; ?>
       <?php endif; ?>
 
-      <div class="column-content">
+      <div class="card-content">
         <?php if (contentCheck('copy_' . $element)): ?>
           <?php contentCreate('copy_' . $element, 'text'); ?>
         <?php endif; ?>
