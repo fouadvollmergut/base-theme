@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 loop: true,
                 slidesPerView: swiperSlidesPerView,
+                spaceBetween: 25,
                 breakpoints: {
                   0: {
                     slidesPerView: 1
