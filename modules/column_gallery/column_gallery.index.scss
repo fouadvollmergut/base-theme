@@ -1,0 +1,185 @@
+.column-gallery {
+
+  .textbox {
+    padding: var(--text-padding-y) var(--text-padding-x);
+  }
+
+  .content--gallery {
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+    position: relative;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--inner-spacing-md);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background-color: var(--base-color-light);
+    align-self: stretch;
+    height: unset;
+
+    .imagebox .gdymc_image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 40vh;
+
+      img, .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .swiper-slide-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--inner-spacing-sm);
+      height: 100%;
+
+      .textbox {
+        padding: 0 var(--text-padding-x);
+      }
+
+      .buttonbox {
+        padding: 0 var(--text-padding-x);
+        padding-bottom: var(--text-padding-y);
+      }
+    }
+  }
+
+  .content--controls {
+    position: relative;
+    top: 0;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    pointer-events: none;
+
+    .controlsbox {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: var(--text-padding-y) var(--text-padding-x);
+
+      &:hover :is(.swiper-button-next, .swiper-button-prev):before {
+        opacity: 1;
+      }
+
+      .swiper-button-next, .swiper-button-prev {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        cursor: pointer;
+        pointer-events: all;
+        opacity: 1;
+        vertical-align: middle;
+        background-color: var(--base-color);
+        z-index: 1;
+        border-radius: var(--border-radius-md);
+
+        transition: background-color 0.15s ease-in-out;
+
+        > div.fa-solid {
+          color: var(--base-color-light) !important; // Override background textcolor
+        }
+
+        &:hover {
+          background-color: var(--base-color-dark);
+        }
+      }
+    }
+  }
+}
+
+.background {
+  &-neutral {
+    .column-gallery .swiper-slide {
+      background-color: var(--base-color-light);
+    }
+
+    .column-gallery .content--controls .controlsbox :is(.swiper-button-next, .swiper-button-prev) {
+      background-color: var(--base-color);
+
+      > div.fa-solid {
+        color: var(--base-color-light) !important; // Override background textcolor
+      }
+
+      &:hover {
+        background-color: var(--base-color-dark);
+      }
+    }
+  }
+
+  &-light {
+    .column-gallery .swiper-slide {
+      background-color: var(--base-color-light);
+    }
+
+    .column-gallery .content--controls .controlsbox :is(.swiper-button-next, .swiper-button-prev) {
+      background-color: var(--base-color);
+
+      > div.fa-solid {
+        color: var(--base-color-light) !important; // Override background textcolor
+      }
+
+      &:hover {
+        background-color: var(--base-color-dark);
+      }
+    }
+  }
+
+  &-dark {
+    .column-gallery .swiper-slide {
+      background-color: var(--base-color-dark);
+    }
+
+    .column-gallery .content--controls .controlsbox :is(.swiper-button-next, .swiper-button-prev) {
+      background-color: var(--base-color);
+
+      > div.fa-solid {
+        color: var(--base-color-light) !important; // Override background textcolor
+      }
+
+      &:hover {
+        background-color: var(--base-color-dark);
+      }
+    }
+  }
+
+  &-accent {
+    .column-gallery .swiper-slide {
+      background-color: var(--accent-color-dark);
+    }
+
+    .column-gallery .content--controls .controlsbox :is(.swiper-button-next, .swiper-button-prev) {
+      background-color: var(--accent-color-dark);
+
+      > div.fa-solid {
+        color: var(--accent-color-light) !important; // Override background textcolor
+      }
+
+      &:hover {
+        background-color: var(--accent-color-darker);
+      }
+    }
+  }
+}
