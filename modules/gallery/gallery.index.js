@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
               const swiperWrapper = gallery.querySelector('.gdymc_gallery');
               const swiperSlides = swiperWrapper.querySelectorAll('.gdymc_gallery_item');
               const swiperSlidesPerView = gallery.dataset.slides || 1;
+              const style = getComputedStyle(document.documentElement);
 
               if (swiperSlides.length < 2) {
                 gallery.querySelector('.content--controls').style.display = 'none';
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 loop: true,
                 slidesPerView: swiperSlidesPerView,
-                spaceBetween: 25,
+                spaceBetween: parseFloat(style.getPropertyValue('--inner-spacing-sm'), 10) * 16,
                 breakpoints: {
                   0: {
                     slidesPerView: 1

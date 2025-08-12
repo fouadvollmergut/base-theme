@@ -10,14 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
               const swiperWrapper = gallery.querySelector('.swiper-wrapper');
               const swiperSlides = swiperWrapper.querySelectorAll('.swiper-slide');
               const swiperSlidesPerView = gallery.dataset.slides || 1;
+              const style = getComputedStyle(document.documentElement);
 
               if (swiperSlides.length < 2) {
                 gallery.querySelector('.content--controls').style.display = 'none';
                 gallery.classList.add('gallery--single');
                 return;
               }
-
-              console.log(gallery, swiperContainer, swiperWrapper, swiperSlides, swiperSlidesPerView);
 
               new Swiper(swiperContainer, {
                 modules: [Navigation, Autoplay],
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 loop: true,
                 slidesPerView: swiperSlidesPerView,
-                spaceBetween: 25,
+                spaceBetween: parseFloat(style.getPropertyValue('--inner-spacing-sm'), 10) * 16,
                 breakpoints: {
                   0: {
                     slidesPerView: 1
