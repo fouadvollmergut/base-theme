@@ -19,7 +19,7 @@
         )
       ), $module->id );
 
-      optionInput( 'listOnly', array(
+      optionInput( 'list-only', array(
         'type' => 'select',
         'default' => '',
         'label' => __( 'Listenmodus', 'Theme' ),

@@ -1,6 +1,6 @@
 <?php 
   $elements = optionGet('elements');
-  $listOnly = optionGet('listOnly');
+  $listOnly = optionGet('list-only');
 ?>
 
 <?php if (!$elements): ?>

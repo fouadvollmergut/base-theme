@@ -5,6 +5,7 @@
   $elements = optionGet('elements');
   $elements = explode("\n", $elements);
   $animation = optionGet('animation');
+  $listOnly = optionGet('list-only');
 
   $elm1col = '';
   $elm2col = '';
@@ -16,6 +17,7 @@
     $elm1col = 'w4p3';
     $elm2col = 'w2p1';
   }
+
 ?>
 
 <div class="content--text <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
@@ -36,18 +38,38 @@
   </div>
 </div>
 
-<ul class="accordion-container <?php echo 'col-' . $elm1col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
+<ul 
+  class="accordion-container <?php echo 'col-' . $elm1col; ?>"
+  <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>
+>
   <?php foreach ($elements as $key => $element): ?>
     <?php $element = explode(":", $element); ?>
-    <li class="accordion-outer" data-key="<?php echo $element[0]; ?>">
+    <li 
+      class="accordion-outer"
+      data-key="<?php echo $element[0]; ?>"
+      <?php if (!$listOnly) echo 'itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"'; ?>
+    >
       <div class="accordion-header">
-        <div class="accordion-headline"><?php echo $element[1] ?? $element[0]; ?></div><span></span>
+        <div 
+          class="accordion-headline"
+          <?php if (!$listOnly) echo 'itemprop="name"'; ?>
+        >
+          <?php echo $element[1] ?? $element[0]; ?>
+        </div>
+        <span></span>
       </div>
 
-      <div class="accordion-inner">
-        <?php if (contentCheck('copy_' . $element[0])): ?>
-          <?php contentCreate('copy_' . $element[0], 'span/text'); ?>
-        <?php endif; ?>
+      <div 
+        class="accordion-inner"
+        <?php if (!$listOnly) echo 'itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"'; ?>
+      >
+        <div
+          <?php if (!$listOnly) echo 'itemprop="text"'; ?>
+        >
+          <?php if (contentCheck('copy_' . $element[0])): ?>
+            <?php contentCreate('copy_' . $element[0], 'span/text'); ?>
+          <?php endif; ?>
+        </div>
 
         <?php if (contentCheck('button_' . $element[0])): ?>
           <?php contentCreate('button_' . $element[0], 'buttongroup'); ?>
