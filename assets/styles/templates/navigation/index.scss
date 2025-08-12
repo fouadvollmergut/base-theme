@@ -58,6 +58,8 @@ header {
           font-family: var(--navigation-font-family);
           font-size: var(--navigation-font-size);
           font-weight: var(--navigation-font-weight);
+          width: auto;
+          width: -webkit-calc-size(auto, size);
           width: calc-size(auto, size);
 
           transition: width 0.12s ease-in-out;
@@ -77,6 +79,8 @@ header {
             position: absolute;
             top: 100%;
             left: 0;
+            width: auto;
+            width: -webkit-calc-size(auto, size);
             width: calc-size(auto, size);
             height: 0%;
             background-color: var(--submenu-background-color);
@@ -114,6 +118,8 @@ header {
 
             > ul.sub-menu {
               width: var(--main-menu-width);
+              height: auto;
+              height: -webkit-calc-size(auto, size);
               height: calc-size(auto, size);
               opacity: 1;
               pointer-events: auto;

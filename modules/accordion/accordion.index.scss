@@ -50,6 +50,8 @@
           }
   
           + .accordion-inner {
+            height: auto;
+            height: -webkit-calc-size(auto, size);
             height: calc-size(auto, size);
             opacity: 1;
             padding: 0 var(--inner-spacing-md);
