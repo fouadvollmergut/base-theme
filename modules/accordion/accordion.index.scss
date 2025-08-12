@@ -35,10 +35,9 @@
       position: relative;
       pointer-events: none;
       background-color: #f3f3f3;
-      padding: 0 var(--text-padding-x);
 
       .accordion-header {
-        padding: var(--inner-spacing-md) 0;
+        padding: var(--inner-spacing-md);
         cursor: pointer;
         pointer-events: all;
 
@@ -54,6 +53,7 @@
           + .accordion-inner {
             height: calc-size(auto, size);
             opacity: 1;
+            padding: 0 var(--inner-spacing-md);
             padding-bottom: var(--inner-spacing-md);
             pointer-events: auto;
             transform: translateY(0px);
@@ -151,4 +151,8 @@
       }
     }
   }
+}
+
+.gdymc_edit .accordion-title {
+  pointer-events: all;
 }

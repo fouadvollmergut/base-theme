@@ -1,5 +1,5 @@
 <?php 
-  $elements = optionGet('elements');
+  $elements = optionGet('items');
 ?>
 
 <?php if (!$elements): ?>
