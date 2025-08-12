@@ -36,13 +36,13 @@
 
           <?php if (contentCheck('headline_' . $element)): ?>
             <div class="textbox">
-              <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline'); ?>
+              <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'card-headline'); ?>
             </div>
           <?php endif; ?>
         </div>
       <?php else: ?>
           <?php if (contentCheck('headline_' . $element)): ?>
-            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'column-headline-numbers'); ?>
+            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'card-headline-numbers'); ?>
           <?php endif; ?>
       <?php endif; ?>
 

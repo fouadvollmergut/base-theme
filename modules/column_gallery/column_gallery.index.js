@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   0: {
                     slidesPerView: 1
                   },
-                  1024: {
+                  768: {
                     slidesPerView: swiperSlidesPerView > 2 ? 2 : swiperSlidesPerView
                   },
                   1400: {

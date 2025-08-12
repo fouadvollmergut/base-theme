@@ -125,7 +125,7 @@
 }
 
 .accordion-headline,
-.column-headline {
+.card-headline {
   font-family: var(--headline-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
@@ -135,7 +135,7 @@
   hyphens: auto;
 }
 
-.column-headline-numbers {
+.card-headline-numbers {
   font-family: var(--headline-font-family);
   font-weight: var(--h4-font-weight);
   font-size: var(--h4-font-size);

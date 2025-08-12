@@ -8,7 +8,7 @@
 <div class="content--text col-w6p1">
     <?php if (contentCheck('headline')): ?>
       <div class="textbox">
-        <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h2'); ?>
+        <?php contentCreate('headline', $seoPosition . '/text', 'auto', 'h4'); ?>
       </div>
     <?php endif; ?>
 </div>
@@ -28,7 +28,7 @@
           <div class="swiper-slide-content">
             <?php if (contentCheck('headline-' . $item)): ?>
               <div class="textbox">
-                <?php contentCreate('headline-' . $item, 'span/text', 'auto', 'h4'); ?>
+                <?php contentCreate('headline-' . $item, 'span/text', 'auto', 'card-headline'); ?>
               </div>
             <?php endif; ?>
             
