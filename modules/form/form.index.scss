@@ -245,7 +245,7 @@
         height: 15px;
         border-radius: var(--border-radius-md);
         border: 2px solid rgba(17, 17, 17, 0.5);
-        background-color: #ffffff;
+        background-color: var(--standard-white);
         display: block;
         content: "";
         float: left;
@@ -256,7 +256,7 @@
       }
 
       &:checked+label::before {
-        box-shadow: inset 0px 0px 0px 3px #ffffff;
+        box-shadow: inset 0px 0px 0px 3px var(--standard-white);
         background-color: rgba(17, 17, 17, 0.5);
       }
     }
@@ -326,11 +326,11 @@
 
         + label::before {
           border: 2px solid rgba(17, 17, 17, 0.5);
-          background-color: #f3f3f3;
+          background-color: var(--standard-off-white);
         }
 
         &:checked+label::before {
-          box-shadow: inset 0px 0px 0px 3px #f3f3f3;
+          box-shadow: inset 0px 0px 0px 3px var(--standard-off-white);
           background-color: rgba(17, 17, 17, 0.5);
         }
       }

@@ -154,7 +154,6 @@ header.mobile {
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0 var(--inner-spacing-sm);
 
   background-color: var(--mainmenu-background-color);
 
@@ -162,7 +161,7 @@ header.mobile {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: calc(var(--inner-spacing-sm) - 2px) 0;
+    padding: calc(var(--inner-spacing-sm) - 2px) var(--inner-spacing-lg);
 
     img {
       object-fit: contain;
@@ -176,15 +175,16 @@ header.mobile {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
     cursor: pointer;
-    height: 14px;
+    height: 100%;
+    padding: 0 var(--inner-spacing-lg);
 
     > span {
       height: 2px;
       width: 30px;
-      background-color: var(--text-color-dark);
+      background-color: var(--standard-off-white);
 
       &:nth-child(1) {
         width: 20px;
@@ -200,7 +200,7 @@ header.mobile {
 
       > span {
         width: 25px;
-        transform-origin: 50% 50%;
+        transform-origin: 56% 50%;
 
         &:nth-child(1) {
           transform: rotate(45deg) translate(5px, 5px);

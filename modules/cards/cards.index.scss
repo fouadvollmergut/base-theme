@@ -1,7 +1,6 @@
 .cards {
   display: flex;
   flex-direction: row;
-  gap: var(--inner-spacing-lg);
 
   .content--text {
     position: relative;
@@ -29,7 +28,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0;
-    padding: var(--container-padding-y) var(--container-padding-x);
+    padding: 0;
 
     container-name: cards-container;
     container-type: inline-size;
@@ -45,7 +44,7 @@
         justify-content: flex-start;
         padding-top: var(--text-padding-y);
         gap: var(--inner-spacing-md);
-        background-color: #f3f3f3;
+        background-color: var(--standard-off-white);
         border-radius: var(--border-radius-lg);
 
         .card-header {
@@ -72,7 +71,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      background-color: #f3f3f3;
+      background-color: var(--standard-off-white);
       gap: var(--inner-spacing-sm);
       border-radius: var(--border-radius-lg);
       overflow: hidden;
@@ -126,8 +125,8 @@
     @container cards-container (width > 700px) {
       &.horizontal {
         .card {
-          flex-basis: calc(100% / 2 - var(--inner-spacing-sm));
-          max-width: calc(100% / 2 - var(--inner-spacing-sm));
+          flex-basis: calc(100% / 2 - (var(--inner-spacing-sm) / 2));
+          max-width: calc(100% / 2 - (var(--inner-spacing-sm) / 2));
         }
       }
     }
@@ -162,7 +161,7 @@
     .cards {
       .content--cards:is(.horizontal, .vertical) {
         > .card {
-          background-color: var(--base-color-light);
+          background-color: var(--standard-white);
         }
       }
     }

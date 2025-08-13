@@ -1,10 +1,10 @@
 .text-image {
-  .content--text {
+  .content--image {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: var(--inner-spacing-md);
+    gap: var(--inner-spacing-lg);
     height: 100%;
 
     .imagebox {
@@ -13,6 +13,7 @@
       justify-content: center;
       width: 100%;
       aspect-ratio: 1 / 1;
+      max-height: 40vh;
 
       img, .img {
         width: 100%;
@@ -21,9 +22,18 @@
         border-radius: var(--border-radius-lg);
       }
     }
+  }
+
+  .content--text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--inner-spacing-lg);
+    height: 100%;
 
     .textbox {
-      padding: var(--text-padding-y) var(--text-padding-x);
+      padding: 0 var(--text-padding-x);
     }
 
     .textbox-container {
@@ -39,8 +49,8 @@
       .textbox-inner {
         display: flex;
         flex-direction: column;
-        gap: var(--inner-spacing-md);
-        padding: var(--text-padding-y) var(--text-padding-x);
+        gap: var(--inner-spacing-lg);
+        padding: 0 var(--text-padding-x);
 
         > * {
           flex-basis: 100%;

@@ -20,7 +20,7 @@
     gap: var(--inner-spacing-md);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
-    background-color: var(--base-color-light);
+    background-color: var(--standard-off-white);
     align-self: stretch;
     height: unset;
 
@@ -112,7 +112,7 @@
 .background {
   &-neutral {
     .column-gallery .swiper-slide {
-      background-color: var(--base-color-light);
+      background-color: var(--standard-white);
     }
 
     .column-gallery .content--controls .controlsbox :is(.swiper-button-next, .swiper-button-prev) {

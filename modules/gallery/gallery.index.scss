@@ -93,7 +93,7 @@
         pointer-events: all;
         opacity: 1;
         vertical-align: middle;
-        background-color: #f3f3f3;
+        background-color: var(--standard-off-white);
         z-index: 1;
         border-radius: var(--border-radius-md);
 
@@ -104,7 +104,7 @@
         }
 
         &:hover {
-          background-color: #ffffff
+          background-color: var(--standard-white);
         }
       }
     }

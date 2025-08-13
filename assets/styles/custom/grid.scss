@@ -8,8 +8,8 @@
 
 :root {
   // Grid margins are globally accessible
-  --grid-margin-left: 25px;
-  --grid-margin-right: 25px;
+  --grid-margin-left: 15px;
+  --grid-margin-right: 15px;
   --grid-max-width-value: 1800px;
 }
 
@@ -36,14 +36,14 @@ $grid-col-width: calc((100% - (#{$grid-margin-left} + #{$grid-margin-right})) / 
     grid-column-end: content-end;
     grid-template-columns: subgrid;
     grid-auto-flow: row dense;
-    row-gap: var(--inner-spacing-md);
+    row-gap: calc(var(--inner-spacing-lg) * 2);
   }
 
   .custom-subgrid {
     display: grid;
     grid-template-columns: subgrid;
     grid-auto-flow: row dense;
-    row-gap: var(--inner-spacing-md);
+    row-gap: calc(var(--inner-spacing-lg) * 2);
     // Needs custom specification for grid-column-start and grid-column-end
   }
 }

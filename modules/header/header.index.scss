@@ -31,7 +31,7 @@
     gap: var(--inner-spacing-md);
     z-index: 1;
     pointer-events: none;
-    background-color: #f3f3f3;
+    background-color: var(--standard-off-white);
     border-radius: var(--border-radius-lg);
 
     > * {
@@ -71,7 +71,7 @@
   &-neutral {
     .module.header {
       .content--text {
-        background-color: #ffffff;
+        background-color: var(--standard-white);
         color: var(--text-color-dark);
       }
     }

@@ -15,7 +15,7 @@
     }
 ?>
 
-<div class="content--text <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
+<div class="content--image <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
   <div class="imagebox">
     <?php if (contentCheck('image')): ?>
       <?php contentCreate('image', 'image', 'autoxauto'); ?>

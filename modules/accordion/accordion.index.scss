@@ -4,7 +4,6 @@
   row-gap: var(--outer-spacing-lg) !important;
 
   @include device-size('tablet') {
-    gap: var(--inner-spacing-lg);
     row-gap: var(--inner-spacing-lg);
   }
 
@@ -33,7 +32,7 @@
     .accordion-outer {
       position: relative;
       pointer-events: none;
-      background-color: #f3f3f3;
+      background-color: var(--standard-off-white);
 
       .accordion-header {
         padding: var(--inner-spacing-md);
@@ -96,6 +95,7 @@
 
       @include device-size('tablet') {
         height: 100%;
+        max-width: var(--textbox-max-width);
       }
 
       > div {
@@ -118,7 +118,7 @@
     .accordion {
       .accordion-container {
         .accordion-outer {
-          background-color: var(--base-color-light);
+          background-color: var(--standard-white);
         }
       }
     }
