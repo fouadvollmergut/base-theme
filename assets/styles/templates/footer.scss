@@ -155,7 +155,7 @@ footer {
   @include device-size('tablet') {
     .footer {
       &.grid {
-        margin: var(--outer-spacing-md) 0;
+        margin: var(--outer-spacing-md) auto;
       }
 
       ul.menu {
