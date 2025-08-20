@@ -29,7 +29,7 @@
   <?php foreach ($elements as $element): ?>
     <li class="card gdymc_sortable_item" data-name="<?php echo substr(str_replace('-', '', $element), 0, 8); ?>" data-key="<?php echo $element; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="' . (intval($key) % 2 * 100) . '"'; ?>>
       <?php if ($layout === '2'): ?>
-        <div class="card-header">
+        <div class="card-header image">
           <?php if (contentCheck('image_' . $element)): ?>
             <?php contentCreate('image_' . $element, 'image', 'autoxauto'); ?>
           <?php endif; ?>
@@ -41,9 +41,13 @@
           <?php endif; ?>
         </div>
       <?php else: ?>
+        <div class="card-header headline">
           <?php if (contentCheck('headline_' . $element)): ?>
-            <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'card-headline-numbers'); ?>
+            <div class="textbox">
+              <?php contentCreate('headline_' . $element, 'span/text', 'auto', 'card-headline-numbers'); ?>
+            </div>
           <?php endif; ?>
+        </div>
       <?php endif; ?>
 
       <div class="card-content">

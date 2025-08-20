@@ -105,6 +105,11 @@
 
       .textbox {
         padding: 0 var(--text-padding-x);
+
+        .card-headline-numbers {
+          display: inline-block;
+          margin-top: var(--text-padding-y);
+        }
       }
     }
 
@@ -133,10 +138,6 @@
   }
 
   @include device-size('tablet') {
-    .content--text {
-      min-height: 60vh;
-    }
-
     .content--cards {
       flex-wrap: wrap;
       gap: 2px;
