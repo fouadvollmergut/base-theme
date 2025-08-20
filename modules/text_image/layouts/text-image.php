@@ -16,11 +16,11 @@
 ?>
 
 <div class="content--image <?php echo 'col-' . $elm2col; ?>" <?php if ($animation) echo 'data-aos="fade-up"'; ?>>
-  <div class="imagebox">
     <?php if (contentCheck('image')): ?>
-      <?php contentCreate('image', 'image', 'autoxauto'); ?>
+      <div class="imagebox">
+        <?php contentCreate('image', 'image', 'autoxauto'); ?>
+      </div>
     <?php endif; ?>
-  </div>
 </div>
 
 <div class="content--text <?php echo 'col-' . $elm1col; ?>" <?php if ($animation) echo 'data-aos="fade-up" data-aos-delay="100"'; ?>>
