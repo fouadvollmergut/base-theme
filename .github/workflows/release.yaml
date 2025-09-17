@@ -25,7 +25,7 @@ jobs:
         run:  |
           npm run build:prod
           cd dist
-          zip -r ../base-theme.zip *
+          zip -r ../base_theme.zip *
 
       - name: Create Release
         id: create_release
@@ -47,8 +47,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./base-theme.zip
-          asset_name: base-theme.zip
+          asset_path: ./base_theme.zip
+          asset_name: base_theme.zip
           asset_content_type: application/zip
 
       - name: Upload Update Info Asset
