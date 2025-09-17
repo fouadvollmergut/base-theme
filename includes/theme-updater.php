@@ -7,7 +7,7 @@ function update_theme ($transient) {
 	$version = wp_get_theme()->get('Version');
 
 	$remote = wp_remote_get(
-		'https://github.com/fouadvollmergut/base-theme/releases/latest/download/info.json',
+		'https://github.com/fouadvollmergut/base_theme/releases/latest/download/info.json',
 		array(
 			'timeout' => 10,
 			'headers' => array(

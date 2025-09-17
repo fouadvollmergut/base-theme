@@ -29,7 +29,7 @@ Damit das Theme einwandfrei funktioniert, müssen die folgenden Plugins installi
 1. Repository klonen oder ZIP-Datei herunterladen:
 
 ```bash
-git clone https://github.com/DEIN-ORG-ODER-USER/fouad-vollmer-gut-basis-theme.git
+git clone https://github.com/fouadvollmergut/base_theme.git
 ```
 
 2. Das Theme in den Ordner `wp-content/themes/` deines WordPress-Projekts verschieben.

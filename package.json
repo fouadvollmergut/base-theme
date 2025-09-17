@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fouadvollmergut/base-theme.git"
+    "url": "git+https://github.com/fouadvollmergut/base_theme.git"
   },
   "author": "Fouad Vollmer & Gut Werbeagentur",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fouadvollmergut/base-theme/issues"
+    "url": "https://github.com/fouadvollmergut/base_theme/issues"
   },
-  "homepage": "https://github.com/fouadvollmergut/base-theme#readme",
+  "homepage": "https://github.com/fouadvollmergut/base_theme#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
