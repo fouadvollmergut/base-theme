@@ -15,9 +15,21 @@
     remove_submenu_page( 'themes.php', 'edit.php?post_type=wp_block' );
   });
 
-  // THEME Disable Comments
+  // THEME Include Theme Updater
+
+  include_once( get_template_directory() . '/includes/theme-updater.php' );
+
+  // THEME Include Disable Comments
 
   include_once( get_template_directory() . '/includes/disable-comments.php' );
+
+  // THEME Include Duplicate Posts
+
+  include_once( get_template_directory() . '/includes/duplicate-posts.php' );
+
+  // THEME Include Company Settings
+
+  include_once( get_template_directory() . '/includes/company-settings.php' );
 
   // THEME Menus
 
@@ -54,11 +66,6 @@
   function theme_scripts() {
     wp_enqueue_script('main_script', get_template_directory_uri() . '/scripts/main.js');
   }
-
-  // THEME Dupliacte Posts
-
-  include_once( get_template_directory() . '/includes/duplicate-posts.php' );
-  include_once( get_template_directory() . '/includes/company-settings.php' );
 
 
   // GDYMC

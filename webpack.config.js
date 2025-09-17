@@ -50,6 +50,7 @@ module.exports = (env, argv) => {
         patterns: [
           { from: "*.php", to: path.resolve(__dirname, "./dist") },
           { from: "*.css", to: path.resolve(__dirname, "./dist") },
+          { from: "info.json", to: path.resolve(__dirname, "./dist") },
           { from: "screenshot.png", to: path.resolve(__dirname, "./dist") },
           { from: "includes", to: path.resolve(__dirname, "./dist/includes") },
           { from: "assets", to: path.resolve(__dirname, "./dist/assets") },
