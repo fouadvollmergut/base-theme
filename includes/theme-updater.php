@@ -33,8 +33,6 @@ function update_theme ($transient) {
 	$data = array(
 		'theme' => $stylesheet,
 		'url' => $remote->details_url,
-		'requires' => $remote->requires,
-		'requires_php' => $remote->requires_php,
 		'new_version' => $remote->version,
 		'package' => $remote->download_url,
 	);
@@ -42,8 +40,6 @@ function update_theme ($transient) {
 	if (
 		$remote
 		&& version_compare($version, $remote->version, '<')
-		&& version_compare($remote->requires, get_bloginfo('version'), '<')
-		&& version_compare($remote->requires_php, PHP_VERSION, '<')
 	) {
 
 		$transient->response[$stylesheet] = $data;
