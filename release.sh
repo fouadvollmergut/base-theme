@@ -18,7 +18,7 @@ sed -i '' -E "s/\"download_url\": \".*\"/\"download_url\": \"https:\/\/github.co
 
 # Commit changes
 git add package.json style.css info.json
-git commit -m "Prepare for release $1"
+git commit -m "Release $1"
 git push origin main
 
 # Set release version
