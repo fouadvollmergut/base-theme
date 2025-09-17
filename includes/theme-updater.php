@@ -1,9 +1,9 @@
 <?php
 
-add_filter( 'site_transient_update_themes', 'update_theme' );
+add_filter( 'pre_set_site_transient_update_themes', 'update_theme' );
 
 function update_theme ($transient) {
-	$stylesheet = get_template();
+	$theme_name = get_template();
 	$version = wp_get_theme()->get('Version');
 
 	$remote = wp_remote_get(
@@ -31,10 +31,10 @@ function update_theme ($transient) {
 	}
 	
 	$data = array(
-		'theme' => $stylesheet,
+		'theme' => $theme_name,
 		'url' => $remote->details_url,
 		'new_version' => $remote->version,
-		'package' => $remote->download_url,
+		'package' => $remote->download_url
 	);
 
 	if (
@@ -42,11 +42,11 @@ function update_theme ($transient) {
 		&& version_compare($version, $remote->version, '<')
 	) {
 
-		$transient->response[$stylesheet] = $data;
+		$transient->response[$theme_name] = $data;
 
 	} else {
 
-		$transient->no_update[$stylesheet] = $data;
+		$transient->no_update[$theme_name] = $data;
 
 	}
 
