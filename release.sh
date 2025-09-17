@@ -14,6 +14,7 @@ fi
 sed -i '' -E "s/\"version\": \".*\"/\"version\": \"$1\"/" package.json
 sed -i '' -E "s/Version: .*/Version: $1/" style.css
 sed -i '' -E "s/\"version\": \".*\"/\"version\": \"$1\"/" info.json
+sed -i '' -E "s/\"download_url\": \".*\"/\"download_url\": \"https:\/\/github.com\/fouadvollmergut\/base-theme\/releases\/download\/$1\/base_theme.zip\"/" info.json
 
 # Commit changes
 git add package.json style.css info.json
