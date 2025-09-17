@@ -23,7 +23,7 @@ jobs:
 
       - name: Build for Production
         run:  |
-          npm run build
+          npm run build:prod
           cd dist
           zip -r ../base-theme.zip *
 
