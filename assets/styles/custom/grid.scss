@@ -27,8 +27,7 @@ $grid-col-width: calc((100% - (#{$grid-margin-left} + #{$grid-margin-right})) / 
   display: grid;
   grid-template-columns: [start] auto [inner-start] $grid-margin-left [content-start] repeat($grid-col-count, $grid-col-width) [content-end] $grid-margin-right [inner-end] auto [end];
   grid-auto-flow: row dense;
-  max-width: $grid-max-width;
-  // margin: 0 auto;
+  width: 100%;
 
   .subgrid {
     display: grid;
@@ -178,8 +177,5 @@ $grid-col-width: calc((100% - (#{$grid-margin-left} + #{$grid-margin-right})) / 
 @include device-size('grid') {
   .grid {
     grid-template-columns: [start] auto [inner-start] $grid-margin-left [content-start] repeat($grid-col-count, calc(#{$grid-max-width} / #{$grid-col-count})) [content-end] $grid-margin-right [inner-end] auto [end];
-    margin: unset;
-    width: 100%;
-    max-width: unset;
   }
 }
