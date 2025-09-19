@@ -3,7 +3,7 @@
   $background = optionGet('background');
 ?>
 
-<div class="content--image col-w8p1">
+<div class="content--image col-w8p2">
   <?php if (contentCheck('image')): ?>
     <?php contentCreate('image', 'image'); ?>
   <?php endif; ?>
